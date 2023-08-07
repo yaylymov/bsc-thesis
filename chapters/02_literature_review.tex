@@ -49,6 +49,13 @@ for every step of the deepfake creation process, including face extraction,
 training, and video creation. This comprehensive suite of tools, combined
 with its high-quality results, make it a popular choice among deepfake creators.
 
+\begin{figure}[hb]
+	\centering
+	\includegraphics[scale=0.36]{figures/ivanka-deepfacelab}
+	\caption{Deepfake of Ivanka Trump impersonating Emma Watson. Screenshot
+		from our own generated deepfake video with DeepFaceLab.} %TODO
+\end{figure}
+
 \subsection{FaceSwap}
 This community-based deepfake tool stands out with its open-source nature,
 providing the user with a choice of multiple \ac{AI} models. It caters to
@@ -58,6 +65,13 @@ FaceSwap\footnote{\url{https://faceswap.dev}} emphasizes the ethical use
 of deepfake technology, warning against non-consensual use of a person's
 likeness. It is more than just a tool; it's a community where people can
 learn, discuss, and share knowledge about deepfakes.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.32]{figures/emma-stone-faceswap}
+	\caption{Deepfake of Emma Stone impersonating Scarlett Johansson using
+		Faceswaps's Phaze-A model. Screenshot from~\cite{emma-stone-faceswap}.}
+\end{figure}
 
 \subsection{Stable Diffuison}
 Stable Diffusion\footnote{\url{https://stability.ai/stablediffusion}} models have
@@ -70,6 +84,13 @@ other generative models may struggle with. This makes them particularly
 well-suited for tasks like deepfake generation, where capturing the
 detailed, multi-modal distribution of human faces is essential.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.59\columnwidth]{figures/justion-trudeau-stable-diff}
+	\caption{Deepfake of Justin Trudeau created with Stable Diffusion.
+		Screenshot from our own generated deepfake dataset.} %TODO
+\end{figure}
+
 \subsection{Neural Textures}
 Introduced by Thies et al.~\cite{thies2019deferred}, Neural Textures represent
 a method for the storage, transmission, and rendering of learned
@@ -77,9 +98,22 @@ neural representations in the context of computer graphics.
 By rendering with learned features instead of geometric detail, Neural
 Textures allow for more efficient representations, enabling high-quality,
 photorealistic image synthesis and editing. Specifically, in the realm of
-deepfakes, Neural Textures can be trained to synthesize person-specific
+deepfakes, Neural Textures, as shown in~\autoref{fig:neural_textures}, can be trained to synthesize person-specific
 details, resulting in high-quality face swaps or manipulation of facial
 expressions in videos.
+
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.7\columnwidth]{figures/neural_textures}
+	\caption{The reenactment synthesis process uses expression transfer 
+    to generate a UV map of the target actor that reflects the source 
+    actor's expression. This map, along with a background image, is 
+    processed by a neural renderer to create the final reenactment. 
+    Expression alteration is achieved by training a unique neural 
+    texture and renderer for the target actor, resulting in a 
+    manipulated video as shown in the image from~\cite{thies2019deferred}.}\label{fig:neural_textures}
+\end{figure}
+
 
 \subsection{FaceApp}
 While not a deepfake tool in the traditional sense,
@@ -92,6 +126,12 @@ around the manipulation of digital imagery~\cite{faceapp}. FaceApp has
 been both praised for its technological achievements and criticized for
 its potential privacy and consent issues, reflecting the wider debates
 surrounding the ethical implications of deepfake technology.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.61\columnwidth]{figures/faceapp}
+	\caption{Deepfake created with FaceApp.} %TODO
+\end{figure}
 
 
 \section{Ethical and Legal Concerns}\label{chapter:legal}
