@@ -1,10 +1,65 @@
 % !TeX root = ../main.tex
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
-\chapter{Analysis of Publicly-Available Deepfake Tools}\label{chapter:tools}
+\chapter{Analysis of Publicly-Available Deepfake Tools}
+For a thorough analysis in this study, a variety of tools were picked. Their selection 
+was not arbitrary; instead, it was based on the clear criteria detailed in~\autoref{tab:selection_criteria}.
+Tools were chosen with a focus on public availability, ensuring that everyone can access 
+and benefit from them. Every tool in this study is open to the public, making the findings 
+broadly applicable.
 
-\section{Seferbekov}\label{chapter:seferbekov}
-\section{FaceForensics++}\label{chapter:faceforensics}
-\section{FaceSwap}\label{chapter:faceswap}
-\section{XceptionNet}\label{chapter:xceptionnet}
-\section{Comparative Analysis}\label{chapter:analysis} 
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        box/.style={draw, rectangle, minimum height=2em, minimum width=3em, text centered},
+        bluebox/.style={box, fill=lightblue, draw=darkblue},
+        greenbox/.style={box, fill=lightgreen, draw=darkgreen},
+        orangebox/.style={box, fill=lightpink, draw=darkpink},
+        greenframebox/.style={box, draw=darkgreen},
+        orangeframebox/.style={box, draw=darkpink},
+        line/.style={draw, -latex}
+    ]
+
+    % Nodes
+    \node[bluebox] (deepfakes) {Deepfakes Detection};
+    \node[greenbox, below left=0.5cm and 1cm of deepfakes] (video) {Video};
+    \node[orangebox, below right=0.5cm and 1cm of deepfakes] (image) {Image};
+
+    \node[greenframebox, below left=1cm and 0.7cm of video] (video1) {Deepware};
+    \node[greenframebox, below=1cm of video] (video2) {Seferbekov};
+    \node[greenframebox, below right=1cm and 0.7cm of video] (video3) {NtechLab};
+
+    \node[orangeframebox, below left=1cm and 0.7cm of image] (image1) {Facetorch};
+    \node[orangeframebox, below=1cm of image] (image2) {Illuminarty};
+    \node[orangeframebox, below right=1cm and 0.7cm of image] (image3) {AI or Not};
+
+    % Paths
+    \path[line, lightblue] (deepfakes) -- (video);
+    \path[line, lightblue] (deepfakes) -- (image);
+
+    \path[line, lightgreen] (video) -- (video1);
+    \path[line, lightgreen] (video) -- (video2);
+    \path[line, lightgreen] (video) -- (video3);
+
+    \path[line, lightpink] (image) -- (image1);
+    \path[line, lightpink] (image) -- (image2);
+    \path[line, lightpink] (image) -- (image3);
+
+    \end{tikzpicture}
+    \caption{Categorization of deepfake detection tools}\label{fig:deepfake-tools}
+\end{figure}
+
+As depicted in~\autoref{fig:deepfake-tools}, three tools were chosen for video 
+detection and another three for image detection. Every tool comes with its own 
+strengths and weaknesses, ranging from how users can access it, the ease of 
+installation, to understanding the results it produces. The selection aimed to 
+cover a range of capabilities, as shown in~\autoref{tab:evaluation_metrics}, 
+to ensure a comprehensive analysis.
+
+\section{Deepware}
+\section{Seferbekov}
+\section{NtechLab}
+\section{Facetorch}
+\section{Illuminarty}
+\section{AI or Not}
+\section{Comparative Analysis}
