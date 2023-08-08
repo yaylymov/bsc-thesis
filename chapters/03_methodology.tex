@@ -4,8 +4,88 @@
 \chapter{Methodology}\label{chapter:methodology}
 
 \section{Selection Criteria}
+The core aim of this research study involves examining and evaluating
+various publicly available deepfake detection tools. It becomes imperative
+to establish a well-defined set of selection criteria for these tools.
+Selecting the right criteria is essential not just for representing a variety
+of detection methods, but also for making a fair comparison between the tools.
+The objective is to ensure that the evaluated tools are comprehensive,
+encompassing the nuances of accessibility, ease of use, limitations, variety
+in detection methods, and documentation. A detailed description of the selection
+criterias is given in~\autoref{tab:selection_criteria}.
 
+\begin{table}[htpb]
+	\caption{Selection Criteria}\label{tab:selection_criteria}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Selection Criteria} & \textbf{Description}                       \\
+		\midrule
+		Ease of use and Limitations & The tool's user-friendliness is determined
+		by the simplicity of its installation process and its operational
+		requirements. Is it a straightforward drag-and-drop mechanism, or does
+		it demand an integrated development environment (\ac{IDE}) and
+		specialized packages? Additionally, any constraints, such
+		as file size limits or video duration caps, play a role in its overall
+		user-friendliness.                                                       \\
+		\addlinespace[0.7ex]
+		Accessibility               & Only publicly accessible tools were taken
+		into account, promoting the accessibility of deepfake detection and
+		ensuring that a wide spectrum of users, from the general public to
+		specialists, can utilize the tools. The cost factor is another crucial
+		aspect of accessibility; tools that are freely available or open
+		source often garner a larger user base compared to proprietary or paid
+		solutions. Whether the tools are available through a simple browser
+		interface or require local installation can greatly influence
+		accessibility. Additionally, while some advanced tools might demand
+		powerful GPU setups, the most accessible ones should be usable on
+		standard hardware configurations or offer cloud-based solutions, like
+		Google Colab, to bypass local hardware limitations.                      \\
+		\addlinespace[0.7ex]
+		Support and Documentation   & Robust documentation and active support,
+		be it community or developer-driven, are crucial. Comprehensive support
+		ensures that users can fully utilize tool features, troubleshoot issues,
+		and gain deeper insights into the tool's workings.                       \\
+		\addlinespace[0.7ex]
+		Dataset choice              & The datasets a tool is compatible with or
+		recommends can reflect its versatility and potential applications.
+		Tools that can adapt to various datasets or come with robust recommended
+		datasets are in a favorable position to tackle countless deepfake
+		challenges.                                                              \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
 
 \section{Evaluation Metrics}
+Once the tools were selected based on the aforementioned criteria, they underwent
+a thorough evaluation to understand their accuracy, efficiency, and
+reliability. The evaluation metrics employed in this study are explained in~\autoref{tab:evaluation_metrics}.
+
+\begin{table}
+	\caption{Evaluation Metrics}\label{tab:evaluation_metrics}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Evaluation Metrics}     & \textbf{Description}                                                                                                                                                                 \\
+		\midrule
+		Processing time and scalability & Measures the time taken by the tool to detect deepfakes in a given input. It also evaluates how well the tool performs when the size of the input data increases.                    \\
+		\addlinespace
+		Interpretability                & Assesses how understandable and transparent the results or outputs of the tool are. It's crucial for users to comprehend why certain detections are made.                            \\
+		\addlinespace
+		Support and Documentation       & Evaluates the comprehensiveness of the tool's official documentation and the responsiveness of its support channels, ensuring users can effectively understand and utilize the tool. \\
+		\addlinespace
+		Detection Accuracy              & The proportion of true results (both true positives and true negatives) in the total dataset. It provides a holistic measure of the tool's performance.                              \\
+		\addlinespace
+		Precision                       & The proportion of true positive results in the total predicted positives. It gauges the tool's ability to avoid false alarms.                                                        \\
+		\addlinespace
+		Recall                          & The proportion of true positive results in the total actual positives. It assesses the tool's ability to detect all potential deepfakes.                                             \\
+		\addlinespace
+		F1-Score                        & The harmonic mean of Precision and Recall. It provides a balance between the two when there's an uneven class distribution.                                                          \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
 \section{Datasets}
 \section{Overview of Selected Deepfake Detection Tools}
