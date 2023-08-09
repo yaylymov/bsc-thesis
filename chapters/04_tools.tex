@@ -2,62 +2,245 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Analysis of Publicly-Available Deepfake Tools}
-For a thorough analysis in this study, a variety of tools were picked. Their selection 
+For a thorough analysis in this study, a variety of tools were picked. Their selection
 was not arbitrary; instead, it was based on the clear criteria detailed in~\autoref{tab:selection_criteria}.
-Tools were chosen with a focus on public availability, ensuring that everyone can access 
-and benefit from them. Every tool in this study is open to the public, making the findings 
+Tools were chosen with a focus on public availability, ensuring that everyone can access
+and benefit from them. Every tool in this study is open to the public, making the findings
 broadly applicable.
 
 \begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[
-        box/.style={draw, rectangle, minimum height=2em, minimum width=3em, text centered},
-        bluebox/.style={box, fill=lightblue, draw=darkblue},
-        greenbox/.style={box, fill=lightgreen, draw=darkgreen},
-        orangebox/.style={box, fill=lightpink, draw=darkpink},
-        greenframebox/.style={box, draw=darkgreen},
-        orangeframebox/.style={box, draw=darkpink},
-        line/.style={draw, -latex}
-    ]
+	\centering
+	\begin{tikzpicture}[
+			box/.style={draw, rectangle, minimum height=2em, minimum width=3em, text centered},
+			bluebox/.style={box, fill=lightblue, draw=darkblue},
+			greenbox/.style={box, fill=lightgreen, draw=darkgreen},
+			orangebox/.style={box, fill=lightpink, draw=darkpink},
+			greenframebox/.style={box, draw=darkgreen},
+			orangeframebox/.style={box, draw=darkpink},
+			line/.style={draw, -latex}
+		]
 
-    % Nodes
-    \node[bluebox] (deepfakes) {Deepfakes Detection};
-    \node[greenbox, below left=0.5cm and 1cm of deepfakes] (video) {Video};
-    \node[orangebox, below right=0.5cm and 1cm of deepfakes] (image) {Image};
+		% Nodes
+		\node[bluebox] (deepfakes) {Deepfakes Detection};
+		\node[greenbox, below left=0.5cm and 1cm of deepfakes] (video) {Video};
+		\node[orangebox, below right=0.5cm and 1cm of deepfakes] (image) {Image};
 
-    \node[greenframebox, below left=1cm and 0.7cm of video] (video1) {Deepware};
-    \node[greenframebox, below=1cm of video] (video2) {Seferbekov};
-    \node[greenframebox, below right=1cm and 0.7cm of video] (video3) {NtechLab};
+		\node[greenframebox, below left=1cm and 0.7cm of video] (video1) {Deepware};
+		\node[greenframebox, below=1cm of video] (video2) {Seferbekov};
+		\node[greenframebox, below right=1cm and 0.7cm of video] (video3) {NtechLab};
 
-    \node[orangeframebox, below left=1cm and 0.7cm of image] (image1) {Facetorch};
-    \node[orangeframebox, below=1cm of image] (image2) {Illuminarty};
-    \node[orangeframebox, below right=1cm and 0.7cm of image] (image3) {AI or Not};
+		\node[orangeframebox, below left=1cm and 0.7cm of image] (image1) {Facetorch};
+		\node[orangeframebox, below=1cm of image] (image2) {Illuminarty};
+		\node[orangeframebox, below right=1cm and 0.7cm of image] (image3) {AI or Not};
 
-    % Paths
-    \path[line, lightblue] (deepfakes) -- (video);
-    \path[line, lightblue] (deepfakes) -- (image);
+		% Paths
+		\path[line, lightblue] (deepfakes) -- (video);
+		\path[line, lightblue] (deepfakes) -- (image);
 
-    \path[line, lightgreen] (video) -- (video1);
-    \path[line, lightgreen] (video) -- (video2);
-    \path[line, lightgreen] (video) -- (video3);
+		\path[line, lightgreen] (video) -- (video1);
+		\path[line, lightgreen] (video) -- (video2);
+		\path[line, lightgreen] (video) -- (video3);
 
-    \path[line, lightpink] (image) -- (image1);
-    \path[line, lightpink] (image) -- (image2);
-    \path[line, lightpink] (image) -- (image3);
+		\path[line, lightpink] (image) -- (image1);
+		\path[line, lightpink] (image) -- (image2);
+		\path[line, lightpink] (image) -- (image3);
 
-    \end{tikzpicture}
-    \caption{Categorization of deepfake detection tools}\label{fig:deepfake-tools}
+	\end{tikzpicture}
+	\caption{Categorization of deepfake detection tools}\label{fig:deepfake-tools}
 \end{figure}
 
-As depicted in~\autoref{fig:deepfake-tools}, three tools were chosen for video 
-detection and another three for image detection. Every tool comes with its own 
-strengths and weaknesses, ranging from how users can access it, the ease of 
-installation, to understanding the results it produces. The selection aimed to 
-cover a range of capabilities, as shown in~\autoref{tab:evaluation_metrics}, 
+As depicted in~\autoref{fig:deepfake-tools}, three tools were chosen for video
+detection and another three for image detection. Every tool comes with its own
+strengths and weaknesses, ranging from how users can access it, the ease of
+installation, to understanding the results it produces. The selection aimed to
+cover a range of capabilities, as shown in~\autoref{tab:evaluation_metrics},
 to ensure a comprehensive analysis.
 
-\section{Deepware}
+\section{Deepware}\label{sec:deepware}
+Deepware is a tool made to tackle a big problem: the rise of fake videos or
+`deepfakes'. The people behind Deepware saw this challenge early on. Their
+parent company, Zemana~\footnote{https://zemana.com/us/antimalware.html},
+was looking into making \ac{AI} tools for computer protection. However,
+by mid-2018, a pivot was observed, and the focus was redirected towards
+deepfake detection by the newly formed Deepware \ac{AI} team.
+
+A concern raised by Deepware's team is the potential advent of deceptive
+voice manipulations, which, when combined with video manipulations, could
+amplify the risks of scams and misinformation. This perspective highlights
+the urgency to develop reliable countermeasures against such threats.
+
+Using Deepware is straightforward. There's a user-friendly website where
+deepfakes can be easily uploaded for assessment. No advanced hardware
+requirements are imposed on the users, making it accessible to many.
+The tool has a support team, and users have the freedom to test with
+datasets of their preference. Importantly, for comprehensive detection,
+Deepware employs 4 different deepfake detection models.
+
+A notable feature integrated into Deepware's platform allows for expert
+reviews. If inaccuracies in the deepfake detection process are suspected,
+a specialized review can be requested, underscoring the team's commitment
+to accuracy and continuous improvement.
+
+In the spirit of community collaboration, parts of Deepware's detection
+mechanism have been open-sourced. By making their findings and tools
+accessible, a collaborative approach to enhancing deepfake detection is
+actively encouraged.
+
+For a thorough assessment, Deepware was subjected to rigorous testing
+using a collection of 110 videos. Out of these, 80 videos were independently
+generated, utilizing the DeepFaceLab and FaceSwap tools. The remaining 30
+were sourced from the established FaceForensics++ (\autoref{section:ff++}) database, wherein 10 were
+identified as deepfakes, while 20 were authentic. The outcomes of the metrics
+assessed with Deepware are presented in~\autoref{tab:deepware_metrics1} and
+in~\autoref{tab:deepware_metrics2}.
+
+\begin{table}[htpb]
+	\caption{Prerequiste data for Deepware for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:deepware_metrics1}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-6}
+		\textbf{\#Deepfakes}       & \textbf{\#Genuine videos}  &
+		\textbf{\#True Positives}  & \textbf{\#True Negatives}  &
+		\textbf{\#False Positives} & \textbf{\#False Negatives}   \\
+		\cline{1-6}
+		90                         & 20                         &
+		85                         & 12                         &
+		8                          & 5                            \\
+		\cline{1-6}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Computed metrics using Deepware}\label{tab:deepware_metrics2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-5}
+		\textbf{Processing Time} & \textbf{Detection Accuracy} &
+		\textbf{Precision}       & \textbf{Recall}             &
+		\textbf{F1-Score}                                        \\
+		\cline{1-5}
+		Avg. 18,5 sec            & 88,18\%                     &
+		91,40\%                  & 94,44\%                     &
+		92,9\%                                                   \\
+		\cline{1-5}
+	\end{tabularx}
+\end{table}
+
+\textbf{Detection Accuracy} is the overall correct classification of the tool,
+considering both \ac{TP} (deepfakes correctly identified) and \ac{TN}
+(genuine videos correctly identified). It is calculated as follows:
+\begin{equation}
+	{\text{Accuracy}} = \frac{TP + TN}{\textit{Total}} \cdot \textit{100\%}\label{eq:accuracy}
+\end{equation}
+
+\textbf{Precision} is the proportion of videos correctly identified as deepfakes
+(\ac{TP}) out of all instances (True Positives + \ac{FP}) that the tool classified as deepfakes. It is calculated
+as follows:
+\begin{equation}
+	{\text{Precision}} = \frac{TP}{TP + FP} \cdot \textit{100\%}\label{eq:precision}
+\end{equation}
+
+\textbf{Recall} is also known as sensitivity, it is the proportion of True Positives
+in relation to the sum of True Positives and \ac{FN}. It is calculated as follows:
+\begin{equation}
+	{\text{Recall}} = \frac{TP}{TP + FN} \cdot \textit{100\%}\label{eq:recall}
+\end{equation}
+
+\textbf{F1-Score} is a metric providing balance between precision and recall, offering
+a more comprehensive view of the performance of the tool. It is calculated as follows:
+\begin{equation}
+	{\text{F1-Score}} = \frac{2 \cdot Precision \cdot Recall}{Precision + Recall}
+	= \frac{TP}{TP + \frac{1}{2}(FN + FP)} \cdot \textit{100\%}\label{eq:f1-score}
+\end{equation}
+
+
+One potential drawback of Deepware is the apparent lack of updates since 2021.
+This could indicate that no new features or improvements have been introduced
+to the tool in recent years, potentially affecting its adaptability to newer
+deepfake techniques.
+
+
 \section{Seferbekov}
+Selim Seferbekov's deepfake detection tool emerged as a winner in the \ac{DFDC}
+challenge, securing a whopping prize of \$500,000. Its acclaim is a testament
+to its advanced capabilities and effectiveness in identifying deepfakes.
+
+At its core, Seferbekov's tool operates by examining videos frame-by-frame.
+In simpler terms, instead of looking at a video as one whole piece, it
+breaks it down and studies each frame just like individual pictures.
+This is essential because deepfakes can often differ in quality from one
+frame to another.
+
+A major strength of this tool comes from its encoder, the EfficientNet B7~\cite{tan2020efficientnet}.
+This encoder is like the brain of the tool and is recognized as one of the
+best of its kind. What makes it even more special is that it was trained using
+both ImageNet~\cite{ILSVRC15}, a huge database of images, and a method called `noisy student'.
+This `noisy student' technique, as detailed in a research paper~\cite{xie2020selftraining},
+allows the tool to learn better and improve its accuracy.
+
+For each video it studies, Seferbekov's tool focuses on 32 specific frames.
+Rather than just averaging out the results from these frames, a unique
+method is employed to analyze them, which has proven to be quite effective.
+The tool uses five distinct B7 models, allowing it to analyze content
+from multiple perspectives.
+
+However, to run this tool and train it, some powerful computer hardware is needed.
+It requires at least four graphics processing units (GPUs) that have a memory
+of 12gb or more. If someone is using popular graphics cards like the 1080Ti
+or 2080Ti, they might need to adjust some settings to get it working perfectly.
+
+To utilize Seferbekov's detection tool, users need to download the detection
+models, add the deepfake videos to the tool's repository, and install certain
+Python libraries. In this study, Google Colaboratory was used to test the tool.
+The results of the metrics tested are presented in the table below.
+Furthermore, the tool is capable of analyzing several videos simultaneously.
+Simply group all your deepfake videos in a single folder and provide that
+folder as input.
+
+\begin{table}[htpb]
+	\caption{Prerequiste data for Seferbekov's tool for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:deepware_metrics1}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-6}
+		\textbf{\#Deepfakes}       & \textbf{\#Genuine videos}  &
+		\textbf{\#True Positives}  & \textbf{\#True Negatives}  &
+		\textbf{\#False Positives} & \textbf{\#False Negatives}   \\
+		\cline{1-6}
+		90                         & 20                         &
+		79                         & 18                         &
+		2                          & 11                           \\
+		\cline{1-6}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Computed metrics using Seferbekov's tool}\label{tab:deepware_metrics2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-5}
+		\textbf{Processing Time} & \textbf{Detection Accuracy} &
+		\textbf{Precision}       & \textbf{Recall}             &
+		\textbf{F1-Score}                                        \\
+		\cline{1-5}
+		Avg. 67,25 sec           & 88,18\%                     &
+		97,53\%                  & 87,8\%                      &
+		92,41\%                                                  \\
+		\cline{1-5}
+	\end{tabularx}
+\end{table}
+
+The calculations of the evaluation metrics are provided in~\autoref{sec:deepware}.
+
+Additionally, Seferbekov's tool is open-source, providing an opportunity
+for those with a programming background and knowledge in detection techniques
+to modify and extend the implementation to their specific requirements.
+This flexibility encourages continuous improvement and adaptability to
+emerging deepfake trends.
+
 \section{NtechLab}
 \section{Facetorch}
 \section{Illuminarty}
