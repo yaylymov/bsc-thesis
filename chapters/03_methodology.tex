@@ -25,8 +25,7 @@ criterias is given in~\autoref{tab:selection_criteria}.
 		Ease of use and Limitations & The tool's user-friendliness is determined
 		by the simplicity of its installation process and its operational
 		requirements. Is it a straightforward drag-and-drop mechanism, or does
-		it demand an integrated development environment (\ac{IDE}) and
-		specialized packages? Additionally, any constraints, such
+		it demand an \ac{IDE} and specialized packages? Additionally, any constraints, such
 		as file size limits or video duration caps, play a role in its overall
 		user-friendliness.                                                       \\
 		\addlinespace
@@ -110,7 +109,7 @@ deepfakes. Today, there are many datasets available that focus on both deepfake 
 and videos. In~\autoref{fig:sample-deepfakes} a fake sample image of each dataset is provided.
 
 \subsection{FaceForensics++}\label{section:ff++}
-FaceForensics++~\footnote{https://github.com/ondyari/FaceForensics} serves as a comprehensive dataset designed for forensic studies. It
+FaceForensics++~\footnote{\url{https://github.com/ondyari/FaceForensics}} serves as a comprehensive dataset designed for forensic studies. It
 comprises 977 videos sourced from YouTube, over 1,000 unique sequences, and an
 impressive collection of more than 8,000 Deepfake videos. Originally launched in
 2018, the dataset received significant updates in 2019, making it richer and more
@@ -133,14 +132,14 @@ actors~\cite{dolhansky2020deepfake}. This variety makes it a great tool to test 
 methods.
 
 \subsection{Face Forensics in the Wild}
-The \ac{FFIW}~\footnote{https://github.com/tfzhou/FFIW} dataset offers 10,000 high-quality
+The \ac{FFIW}~\footnote{\url{https://github.com/tfzhou/FFIW}} dataset offers 10,000 high-quality
 manipulated videos. What's unique about it is the automatic manipulation process. This
 process is managed by a domain-adversarial quality assessment network, which means creating
 this dataset requires less human intervention. This design ensures that the dataset can
 be scaled up easily and at a low human cost~\cite{Zhou_2021_CVPR}.
 
 \subsection{OpenForensics}
-The OpenForensics~\footnote{https://github.com/ltnghia/openforensics} dataset is tailored for detecting and segmenting multi-face forgeries.
+The OpenForensics~\footnote{\url{https://github.com/ltnghia/openforensics}} dataset is tailored for detecting and segmenting multi-face forgeries.
 Its version 1.0.0 houses more than 115,000 real-world images, capturing a total of 334,000 human faces.
 Each image in the dataset comes with detailed face-related annotations, like the type
 of forgery, bounding boxes, segmentation masks, forgery boundaries, and typical facial
@@ -174,5 +173,5 @@ landmarks~\cite{ltnghia-ICCV2021}.
 	\end{subfigure}
 	\caption{Sample deepfake images taken from FaceForensics++~\cite{roessler2019faceforensicspp},
 		DFDC~\cite{dolhansky2020deepfake}, FFIW~\cite{Zhou_2021_CVPR}
-		and OpenForensics~\cite{ltnghia-ICCV2021}}\label{fig:sample-deepfakes}
+		and OpenForensics~\cite{ltnghia-ICCV2021}.}\label{fig:sample-deepfakes}
 \end{figure}

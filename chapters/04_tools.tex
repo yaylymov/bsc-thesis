@@ -1,7 +1,7 @@
 % !TeX root = ../main.tex
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
-\chapter{Analysis of Publicly-Available Deepfake Tools}
+\chapter{Analysis of Publicly-Available Deepfake Detection Tools}\label{sec:analysis-tools}
 For a thorough analysis in this study, a variety of tools were picked. Their selection
 was not arbitrary; instead, it was based on the clear criteria detailed in~\autoref{tab:selection_criteria}.
 Tools were chosen with a focus on public availability, ensuring that everyone can access
@@ -56,10 +56,22 @@ installation, to understanding the results it produces. The selection aimed to
 cover a range of capabilities, as shown in~\autoref{tab:evaluation_metrics},
 to ensure a comprehensive analysis.
 
+For a thorough assessment, each one of these video detection tools were subjected
+to rigorous testing using a collection of 110 videos. Out of these, 80 videos were independently
+generated, utilizing the DeepFaceLab and FaceSwap tools. The remaining 30
+were sourced from the established FaceForensics++ (\autoref{section:ff++})
+database, wherein 10 were identified as deepfakes, while 20 were authentic.
+
+For the image detection analysis, we employed a total of 123 pictures. Out of
+these, 103 were deepfakes produced using FaceApp (\autoref{sec:faceapp}) and
+Stable Diffusion (\autoref{sec:stable-diffusion}), while the
+remaining 20 were authentic images from our proprietary dataset.
+
 \section{Deepware}\label{sec:deepware}
-Deepware is a tool made to tackle a big problem: the rise of fake videos or
-`deepfakes'. The people behind Deepware saw this challenge early on. Their
-parent company, Zemana~\footnote{https://zemana.com/us/antimalware.html},
+Deepware\footnote{\url{https://deepware.ai/}} is a tool made to tackle a big
+problem: the rise of fake videos or `deepfakes'. The people behind
+Deepware saw this challenge early on. Their parent company,
+Zemana\footnote{\url{https://zemana.com/us/antimalware.html}},
 was looking into making \ac{AI} tools for computer protection. However,
 by mid-2018, a pivot was observed, and the focus was redirected towards
 deepfake detection by the newly formed Deepware \ac{AI} team.
@@ -86,16 +98,11 @@ mechanism have been open-sourced. By making their findings and tools
 accessible, a collaborative approach to enhancing deepfake detection is
 actively encouraged.
 
-For a thorough assessment, Deepware was subjected to rigorous testing
-using a collection of 110 videos. Out of these, 80 videos were independently
-generated, utilizing the DeepFaceLab and FaceSwap tools. The remaining 30
-were sourced from the established FaceForensics++ (\autoref{section:ff++}) database, wherein 10 were
-identified as deepfakes, while 20 were authentic. The outcomes of the metrics
-assessed with Deepware are presented in~\autoref{tab:deepware_metrics1} and
+The outcomes of the metrics assessed with Deepware are presented in~\autoref{tab:deepware_metrics1} and
 in~\autoref{tab:deepware_metrics2}.
 
 \begin{table}[htpb]
-	\caption{Prerequiste data for Deepware for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:deepware_metrics1}
+	\caption{Computed data using Deepware for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:deepware_metrics1}
 	\centering
 	\small
 	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
@@ -163,8 +170,9 @@ deepfake techniques.
 
 
 \section{Seferbekov}
-Selim Seferbekov's deepfake detection tool emerged as a winner in the \ac{DFDC}
-challenge, securing a whopping prize of \$500,000. Its acclaim is a testament
+Selim Seferbekov's\footnote{\url{https://github.com/selimsef/dfdc_deepfake_challenge}}
+deepfake detection tool emerged as a winner in the \ac{DFDC}
+challenge, securing a whopping prize of \$500,000~\cite{kaggle2020}. Its acclaim is a testament
 to its advanced capabilities and effectiveness in identifying deepfakes.
 
 At its core, Seferbekov's tool operates by examining videos frame-by-frame.
@@ -187,7 +195,7 @@ The tool uses five distinct B7 models, allowing it to analyze content
 from multiple perspectives.
 
 However, to run this tool and train it, some powerful computer hardware is needed.
-It requires at least four graphics processing units (GPUs) that have a memory
+It requires at least four \ac{GPU}s that have a memory
 of 12gb or more. If someone is using popular graphics cards like the 1080Ti
 or 2080Ti, they might need to adjust some settings to get it working perfectly.
 
@@ -200,7 +208,7 @@ Simply group all your deepfake videos in a single folder and provide that
 folder as input.
 
 \begin{table}[htpb]
-	\caption{Prerequiste data for Seferbekov's tool for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:deepware_metrics1}
+	\caption{Computed data using Seferbekov's tool for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:seferbekov_metrics1}
 	\centering
 	\small
 	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
@@ -217,7 +225,7 @@ folder as input.
 \end{table}
 
 \begin{table}[htpb]
-	\caption{Computed metrics using Seferbekov's tool}\label{tab:deepware_metrics2}
+	\caption{Computed metrics using Seferbekov's tool}\label{tab:seferbekov_metrics2}
 	\centering
 	\small
 	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
@@ -235,14 +243,291 @@ folder as input.
 
 The calculations of the evaluation metrics are provided in~\autoref{sec:deepware}.
 
+In terms of interpretability, Seferbekov's tool delivers comprehensible outputs.
+Once the detection is complete, it provides users with a \ac{CSV} file detailing the
+probability of a video being a deepfake. Its clear output format means users
+can quickly grasp the findings. Furthermore, the tool's ability to support
+numerous public deepfake datasets highlights its adaptability and relevance in
+the field of deepfake detection.
+
 Additionally, Seferbekov's tool is open-source, providing an opportunity
 for those with a programming background and knowledge in detection techniques
 to modify and extend the implementation to their specific requirements.
 This flexibility encourages continuous improvement and adaptability to
 emerging deepfake trends.
 
+One potential limitation of Seferbekov's tool is its lack of active support and
+community documentation. This means troubleshooting can be challenging if users
+encounter issues. Moreover, the tool's GitHub repository hasn't seen updates
+since 2021. Consequently, recent advancements in deepfake techniques might not
+be as effectively addressed by this detection tool, potentially impacting its
+utility with newer deepfake methods.
+
 \section{NtechLab}
+NtechLab's\footnote{\url{https://github.com/NTech-Lab/deepfake-detection-challenge}}
+software made waves by clinching third place in the \ac{DFDC} Challenge,
+walking away with a cool \$100,000 prize~\cite{kaggle2020}. One of the standout
+features of this tool is its ability to check multiple deepfake videos
+simultaneously. After the analysis, it gives results in a straightforward \ac{CSV}
+file, detailing the chances of videos being manipulated.
+
+Before starting with this tool, the necessary training models had to be downloaded.
+It should be noted that a decent hardware configuration is essential for the tool
+to operate without issues.
+
+While the tool's developers utilized superior hardware, the decision was made
+to employ Google Colaboratory in our research due to the lack of access to such
+advanced hardware. This choice highlights the adaptability of the tool
+across various platforms.
+
+Talking about the layers on how this tool works: the heart of the software is
+based on a trio of EfficientNet-B7 models~\cite{tan2020efficientnet}.
+These models use `Noisy Student'~\cite{xie2020selftraining} pre-trained weights.
+One of these models looks at video sequences, while the other two break videos
+down, frame by frame, changing their approach based on how big the face in the
+video is and a few other tweaks.
+
+To make sure the models are spot-on and don't get `confused' or overdo things,
+a special mixup technique was used, alongside some neat tweaks like
+AutoAugment~\cite{cubuk2019autoaugment} and Random Erasing~\cite{zhong2017random}.
+They even had a clever way of adjusting video compression on-the-spot, which
+involves playing around with short video clips.
+
+The NtechLab's tool is open source, which means anyone can access and modify its
+code. This allows for greater flexibility, especially for those who wish to
+customize or build upon the tool's features. Its open nature encourages
+collaboration and adaptation to suit various needs.
+
+The results from the metrics tested with NtechLab can be seen
+in~\autoref{tab:ntechlab_metrics1} and~\autoref{tab:ntechlab_metrics2}.
+
+\begin{table}[htpb]
+	\caption{Computed data using NtechLab's tool for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:ntechlab_metrics1}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-6}
+		\textbf{\#Deepfakes}       & \textbf{\#Genuine videos}  &
+		\textbf{\#True Positives}  & \textbf{\#True Negatives}  &
+		\textbf{\#False Positives} & \textbf{\#False Negatives}   \\
+		\cline{1-6}
+		90                         & 20                         &
+		79                         & 19                         &
+		1                          & 11                           \\
+		\cline{1-6}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Computed metrics using NtechLab's tool}\label{tab:ntechlab_metrics2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-5}
+		\textbf{Processing Time} & \textbf{Detection Accuracy} &
+		\textbf{Precision}       & \textbf{Recall}             &
+		\textbf{F1-Score}                                        \\
+		\cline{1-5}
+		Avg. 14 min              & 98\%                        &
+		98,75\%                  & 87,8\%                      &
+		93\%                                                     \\
+		\cline{1-5}
+	\end{tabularx}
+\end{table}
+
+A shared concern with both NtechLab's and Seferbekov's tools is the lack of continuous support
+and detailed documentation. While Seferbekov's repository has remained inactive since 2021,
+NtechLab's hasn't seen updates since 2020. This stagnation hints at
+potential challenges in adapting to the latest deepfake techniques and staying current
+in the rapidly advancing realm of deepfake detection.
+
 \section{Facetorch}
+Facetorch\footnote{\url{https://github.com/tomas-gajarsky/facetorch}}, crafted by Tomáš Gajarský,
+stands out as a cutting-edge tool designed for image forgery detection. It is a a
+straightforward Python tool built on PyTorch\footnote{\url{https://pytorch.org/}},
+a popular programming framework. It's designed to identify faces and explore the detailed
+aspects of facial features using specific algorithms known as neural networks. The aim is to
+bring together the finest pre-existing models, enhance their speed with TorchScript\footnote{\url{https://pytorch.org/docs/stable/jit.html}},
+and present an all-in-one solution for face analysis. The features it offers include:
+
+\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\item Face Detection
+	\item Facial Representation Learning
+	\item Face Verification
+	\item Facial Expression Recognition
+	\item Deepfake Detection
+	\item 3D Face Alignment
+\end{itemize}
+
+Notably, this tool comes with a user manual~\cite{facetorch}, \ac{API}
+instructions~\cite{facetorch-documentation}, and an instance on Hugging Face~\cite{facetorch-hugging-face},
+where users benefit from a dedicated interface for deepfake testing. Additionally, for those
+familiar with Google Colab, there's a ready-to-use notebook available~\cite{facetorch-google-colab}.
+One of its most appealing aspects is its open-source nature, with updates being consistently
+rolled out up until March 2023.
+
+The results from the metrics tested with NtechLab can be seen
+in~\autoref{tab:facetorch_metrics1} and~\autoref{tab:facetorch_metrics2}.
+
+\begin{table}[htpb]
+	\caption{Computed data using Facetorch for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:facetorch_metrics1}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-6}
+		\textbf{\#Deepfakes}       & \textbf{\#Genuine videos}  &
+		\textbf{\#True Positives}  & \textbf{\#True Negatives}  &
+		\textbf{\#False Positives} & \textbf{\#False Negatives}   \\
+		\cline{1-6}
+		101*                       & 20                         &
+		2                          & 20                         &
+		0                          & 99                           \\
+		\cline{1-6}
+	\end{tabularx}
+\end{table}
+
+* - Two images couldn't be detected but the overall number of deepfakes is 103 as mentioned in the
+last paragraph of~\autoref{sec:analysis-tools}.
+
+\begin{table}[htpb]
+	\caption{Computed metrics using Facetorch}\label{tab:facetorch_metrics2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-5}
+		\textbf{Processing Time} & \textbf{Detection Accuracy} &
+		\textbf{Precision}       & \textbf{Recall}             &
+		\textbf{F1-Score}                                        \\
+		\cline{1-5}
+		Avg. 13sec               & 18,18\%                     &
+		100\%                    & 1,98\%                      &
+		3,88\%                                                   \\
+		\cline{1-5}
+	\end{tabularx}
+\end{table}
+
+Based on the results, it's clear that Facetorch had some challenges spotting deepfakes.
+One possible explanation is that the way these deepfakes were created might not match well
+with the methods the tool uses. Even with this shortcoming in detecting fake images,
+the tool still offers valuable information. Not only does it tell us if an image is real or
+fake, but it also helps identify the emotions shown in the image, like whether the person
+is feeling happy, angry and so on.
+
+
 \section{Illuminarty}
+Illuminarty\footnote{\url{https://app.illuminarty.ai/}} is an online platform where users can
+easily upload images to detect deepfakes and \ac{AI} generated images. It comes with an \ac{API}
+option and offers subscription-based plans for those who want to enable more features such as:
+\ac{AI} model identification for image generators or unlimited \ac{API} usage. Using the free version,
+users can only utilize \ac{AI} and Deepfake images and texts. There is also a user-friendly "Terms of Use"
+section that explains the tool's purpose and usage instructions. Additionally, if users need suport, they
+can reach out the Illuminarty community through Discord or Patreon.
+
+The results from the metrics tested with Illuminarty is provided
+in~\autoref{tab:facetorch_metrics1} and~\autoref{tab:facetorch_metrics2}.
+
+\begin{table}[htpb]
+	\caption{Computed data using Illuminarty for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:illuminarty_metrics1}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-6}
+		\textbf{\#Deepfakes}       & \textbf{\#Genuine videos}  &
+		\textbf{\#True Positives}  & \textbf{\#True Negatives}  &
+		\textbf{\#False Positives} & \textbf{\#False Negatives}   \\
+		\cline{1-6}
+		103                        & 20                         &
+		26                         & 17                         &
+		3                          & 77                           \\
+		\cline{1-6}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Computed metrics using Illuminarty}\label{tab:illuminarty_metrics2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-5}
+		\textbf{Processing Time} & \textbf{Detection Accuracy} &
+		\textbf{Precision}       & \textbf{Recall}             &
+		\textbf{F1-Score}                                        \\
+		\cline{1-5}
+		Avg. 4sec                & 35\%                        &
+		89,7\%                   & 25,24\%                     &
+		39,4\%                                                   \\
+		\cline{1-5}
+	\end{tabularx}
+\end{table}
+
 \section{AI or Not}
-\section{Comparative Analysis}
+AI or Not\footnote{\url{https://www.aiornot.com/}} is the idea of Andrey Doronichev,
+formerly Director of Product at Google. In 2022 he founded Optic\footnote{\url{https://www.optic.xyz/}},
+a startup dedicated to identifying the authenticity of images, videos and voices. Optic offers three
+main products:
+
+\textbf{AI or Not}: This tool helps to determine whether an image has been generated by \ac{AI} or a
+human.
+
+\textbf{Bias-o-Meter}: This is a smart tool, integrated with the Chrome extension to find hidden biases
+and truth behind the News.
+
+\textbf{NFT fraud detection}: This is tool prevents digital art or NFT fraud across blockchains and
+marketplaces using realtime detection.
+
+We will be focusing on AI or Not. This tool stands out because of its support and user-friendly guidelines.
+To analyze the authenticity of images, you can either upload an image directly to their website or
+input an image's web address. While it isn't purely for detecting deepfakes, it's versatile enough
+to identify images generated by technologies like Stable Diffusion, MidJourney\footnote{\url{https://www.midjourney.com/}},
+DALL-E\footnote{\url{https://openai.com/dall-e-2}} and \ac{GAN}~\cite{ai-or-not}.
+
+It also offers Chrome extension and a Telegram bot\footnote{\url{https://t.me/AI_or_not_bot}}, if you
+want to stay updated. Your uploaded images are kept private; they've detailed this in their
+privacy policy. If you need to test multiple images at once, the documentation guides you on
+how to proceed after acquiring \ac{API} access. The tool comfortably supports popular image formats
+like JPEG and PNG\@.
+
+Regarding the interpretability of the output, it tells you if the image is generated by \ac{AI} or Human.
+In the words of the creators, AI or Not is a special online tool that quickly tells you if an
+image is made by a computer or a person. If the image is made by a computer, the tool
+even tells you the exact \ac{AI} method used.
+
+Here are the results from the tested metrics with AI or Not:
+
+\begin{table}[htpb]
+	\caption{Computed data using AI or Not for calculating evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{tab:air-or-not_metrics1}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-6}
+		\textbf{\#Deepfakes}       & \textbf{\#Genuine videos}  &
+		\textbf{\#True Positives}  & \textbf{\#True Negatives}  &
+		\textbf{\#False Positives} & \textbf{\#False Negatives}   \\
+		\cline{1-6}
+		100*                       & 20                         &
+		49                         & 20                         &
+		0                          & 51                           \\
+		\cline{1-6}
+	\end{tabularx}
+\end{table}
+
+* - Three images couldn't be detected but the overall number of deepfakes is 103 as mentioned in the
+last paragraph of~\autoref{sec:analysis-tools}.
+
+\begin{table}[htpb]
+	\caption{Computed metrics using AI or Not}\label{tab:ai-or-not_metrics2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+		\cline{1-5}
+		\textbf{Processing Time} & \textbf{Detection Accuracy} &
+		\textbf{Precision}       & \textbf{Recall}             &
+		\textbf{F1-Score}                                        \\
+		\cline{1-5}
+		Avg. 3sec                & 57,5\%                      &
+		100\%                    & 49\%                        &
+		65,77\%                                                  \\
+		\cline{1-5}
+	\end{tabularx}
+\end{table}
