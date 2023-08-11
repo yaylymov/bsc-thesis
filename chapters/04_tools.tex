@@ -69,7 +69,7 @@ remaining 20 were authentic images from our proprietary dataset.
 
 \section{Deepware}\label{sec:deepware}
 Deepware\footnote{\url{https://deepware.ai/}} is a tool made to tackle a big
-problem: the rise of fake videos or `deepfakes'. The people behind
+problem: the rise of fake videos. The people behind
 Deepware saw this challenge early on. Their parent company,
 Zemana\footnote{\url{https://zemana.com/us/antimalware.html}},
 was looking into making \ac{AI} tools for computer protection. However,
@@ -83,13 +83,13 @@ the urgency to develop reliable countermeasures against such threats.
 
 Using Deepware is straightforward. There's a user-friendly website where
 deepfakes can be easily uploaded for assessment. No advanced hardware
-requirements are imposed on the users, making it accessible to many.
+requirements are demanded from users, making it accessible to many.
 The tool has a support team, and users have the freedom to test with
-datasets of their preference. Importantly, for comprehensive detection,
+datasets of their preference. Importantly, for the detection,
 Deepware employs 4 different deepfake detection models.
 
 A notable feature integrated into Deepware's platform allows for expert
-reviews. If inaccuracies in the deepfake detection process are suspected,
+reviews. If mistakes in the deepfake detection process are suspected,
 a specialized review can be requested, underscoring the team's commitment
 to accuracy and continuous improvement.
 
@@ -191,7 +191,7 @@ allows the tool to learn better and improve its accuracy.
 For each video it studies, Seferbekov's tool focuses on 32 specific frames.
 Rather than just averaging out the results from these frames, a unique
 method is employed to analyze them, which has proven to be quite effective.
-The tool uses five distinct B7 models, allowing it to analyze content
+The tool uses five distinct EfficientNet B7 models, allowing it to analyze content
 from multiple perspectives.
 
 However, to run this tool and train it, some powerful computer hardware is needed.
@@ -243,7 +243,7 @@ folder as input.
 
 The calculations of the evaluation metrics are provided in~\autoref{sec:deepware}.
 
-In terms of interpretability, Seferbekov's tool delivers comprehensible outputs.
+In terms of interpretability, Seferbekov's tool delivers simple outputs.
 Once the detection is complete, it provides users with a \ac{CSV} file detailing the
 probability of a video being a deepfake. Its clear output format means users
 can quickly grasp the findings. Furthermore, the tool's ability to support
@@ -275,19 +275,19 @@ Before starting with this tool, the necessary training models had to be download
 It should be noted that a decent hardware configuration is essential for the tool
 to operate without issues.
 
-While the tool's developers utilized superior hardware, the decision was made
-to employ Google Colaboratory in our research due to the lack of access to such
+While the tool's developers used superior hardware, the decision was made
+to work with Google Colaboratory in our research due to the lack of access to such
 advanced hardware. This choice highlights the adaptability of the tool
 across various platforms.
 
-Talking about the layers on how this tool works: the heart of the software is
+Talking about the technicalities on how this tool works: the heart of the software is
 based on a trio of EfficientNet-B7 models~\cite{tan2020efficientnet}.
-These models use `Noisy Student'~\cite{xie2020selftraining} pre-trained weights.
+These models use Noisy Student~\cite{xie2020selftraining} pre-trained weights.
 One of these models looks at video sequences, while the other two break videos
 down, frame by frame, changing their approach based on how big the face in the
 video is and a few other tweaks.
 
-To make sure the models are spot-on and don't get `confused' or overdo things,
+To make sure the models are spot-on and don't get confused or overdo things,
 a special mixup technique was used, alongside some neat tweaks like
 AutoAugment~\cite{cubuk2019autoaugment} and Random Erasing~\cite{zhong2017random}.
 They even had a clever way of adjusting video compression on-the-spot, which
@@ -343,9 +343,9 @@ in the rapidly advancing realm of deepfake detection.
 
 \section{Facetorch}
 Facetorch\footnote{\url{https://github.com/tomas-gajarsky/facetorch}}, crafted by Tomáš Gajarský,
-stands out as a cutting-edge tool designed for image forgery detection. It is a a
-straightforward Python tool built on PyTorch\footnote{\url{https://pytorch.org/}},
-a popular programming framework. It's designed to identify faces and explore the detailed
+stands out as a tool designed for image forgery detection. It is developed
+in Python and PyTorch\footnote{\url{https://pytorch.org/}},
+a popular programming framework. It is designed to identify faces and explore the detailed
 aspects of facial features using specific algorithms known as neural networks. The aim is to
 bring together the finest pre-existing models, enhance their speed with TorchScript\footnote{\url{https://pytorch.org/docs/stable/jit.html}},
 and present an all-in-one solution for face analysis. The features it offers include:
@@ -420,7 +420,7 @@ Illuminarty\footnote{\url{https://app.illuminarty.ai/}} is an online platform wh
 easily upload images to detect deepfakes and \ac{AI} generated images. It comes with an \ac{API}
 option and offers subscription-based plans for those who want to enable more features such as:
 \ac{AI} model identification for image generators or unlimited \ac{API} usage. Using the free version,
-users can only utilize \ac{AI} and Deepfake images and texts. There is also a user-friendly "Terms of Use"
+users can only check \ac{AI} and Deepfake images and texts. There is also a user-friendly "Terms of Use"
 section that explains the tool's purpose and usage instructions. Additionally, if users need suport, they
 can reach out the Illuminarty community through Discord or Patreon.
 
@@ -473,7 +473,7 @@ human.
 \textbf{Bias-o-Meter}: This is a smart tool, integrated with the Chrome extension to find hidden biases
 and truth behind the News.
 
-\textbf{NFT fraud detection}: This is tool prevents digital art or NFT fraud across blockchains and
+\textbf{NFT fraud detection}: This is tool prevents digital art or \ac{NFT} fraud across blockchains and
 marketplaces using realtime detection.
 
 We will be focusing on AI or Not. This tool stands out because of its support and user-friendly guidelines.

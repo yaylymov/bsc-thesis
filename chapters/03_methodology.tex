@@ -34,7 +34,7 @@ criterias is given in~\autoref{tab:selection_criteria}.
 		ensuring that a wide spectrum of users, from the general public to
 		specialists, can utilize the tools. The cost factor is another crucial
 		aspect of accessibility; tools that are freely available or open
-		source often garner a larger user base compared to proprietary or paid
+		source often gain a larger user base compared to proprietary or paid
 		solutions. Whether the tools are available through a simple browser
 		interface or require local installation can greatly influence
 		accessibility. Additionally, while some advanced tools might demand
@@ -42,31 +42,30 @@ criterias is given in~\autoref{tab:selection_criteria}.
 		standard hardware configurations or offer cloud-based solutions, like
 		Google Colab, to bypass local hardware limitations.                      \\
 		\addlinespace
-		Support and Documentation   & Robust documentation and active support,
-		be it community or developer-driven, are crucial. Comprehensive support
-		ensures that users can fully utilize tool features, troubleshoot issues,
-		and gain deeper insights into the tool's workings.                       \\
+		Support and Documentation   & Proper documentation and active support,
+		be it community or developer-driven, are crucial. Regular support
+		ensures that users can fully make use of tool features, troubleshoot issues,
+		and gain deeper insights into the tool's functionalities.                \\
 		\addlinespace
-		Dataset choice              & The datasets a tool is compatible with or
-		recommends can reflect its versatility and potential applications.
-		Tools that can adapt to various datasets or come with robust recommended
-		datasets are in a favorable position to tackle countless deepfake
-		challenges.                                                              \\
+		Dataset choice              & The datasets compatible with the tool
+		can reflect its versatility and potential applications.
+		Tools that can adapt to various datasets or come with recommended
+		datasets are in a favorable position.                                    \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
 
 \section{Evaluation Metrics}
-After careful selection of the tools based on the prescribed criteria, it became
-imperative to systematically evaluate them to ensure their, accuracy
+After careful selection of the tools based on the prescribed criteria, it is
+important to systematically evaluate them to ensure their, accuracy
 and efficiency. This evaluation isn't just about how these tools perform; it's
 about understanding their strengths and potential weaknesses.
 
 Each tool has a unique set of features and algorithms that drive its functionality.
 However, to compare them on a fair level and to ensure a comprehensive
-assessment, a standard set of evaluation metrics is employed. These metrics serve
-as a guiding light, illuminating the capabilities of each tool in terms of
-detecting deepfakes. The evaluation metrics employed in this study are provided in~\autoref{tab:evaluation_metrics}.
+assessment, a standard set of evaluation metrics is applied. These metrics serve
+as a guiding light, distinguishing the capabilities of each tool in terms of
+detecting deepfakes. The evaluation metrics used in this study are provided in~\autoref{tab:evaluation_metrics}.
 
 \begin{table}[htpb]
 	\caption{Evaluation Metrics}\label{tab:evaluation_metrics}
@@ -74,29 +73,29 @@ detecting deepfakes. The evaluation metrics employed in this study are provided 
 	\small
 	\begin{tabularx}{\textwidth}{l X}
 		\toprule
-		\textbf{Evaluation Metrics}     & \textbf{Description}                                 \\
+		\textbf{Evaluation Metrics} & \textbf{Description}                                     \\
 		\midrule
-		Processing time and scalability & Measures the time taken by the tool to detect
+		Processing time             & Measures the time taken by the tool to detect
 		deepfakes in a given input. It also evaluates how well the tool performs
 		when the size and the number of the input data increases.                              \\
 		\addlinespace
-		Interpretability                & Assesses how understandable and transparent
+		Interpretability            & Assesses how understandable and transparent
 		the results or outputs of the tool are. It's crucial for users to comprehend
 		why certain detections are made.                                                       \\
 		\addlinespace
-		Detection Accuracy              & The proportion of true results (both true
+		Detection Accuracy          & The proportion of true results (both true
 		positives and true negatives) in the total dataset. It provides a comprehensive
 		measure of the tool's ability to correctly identify both genuine and deepfake content. \\
 		\addlinespace
-		Precision                       & The proportion of true positive results in the
+		Precision                   & The proportion of true positive results in the
 		total predicted positives (both true and false positives). It measures the tool's capability to avoid false positives,
 		ennsuring that genuine content isn't mistakenly flagged.                               \\
 		\addlinespace
-		Recall                          & Measures the tool's ability to correctly
+		Recall                      & Measures the tool's ability to correctly
 		identify actual deepfakes out of all genuine deepfakes presented. It calculates the
 		number of actual true positives the tool identifies.                                   \\
 		\addlinespace
-		F1-Score                        & The harmonic mean of Precision and Recall.
+		F1-Score                    & The harmonic mean of Precision and Recall.
 		It provides a balance between the two when there's an uneven class distribution.       \\
 		\bottomrule
 	\end{tabularx}
@@ -109,13 +108,14 @@ deepfakes. Today, there are many datasets available that focus on both deepfake 
 and videos. In~\autoref{fig:sample-deepfakes} a fake sample image of each dataset is provided.
 
 \subsection{FaceForensics++}\label{section:ff++}
-FaceForensics++~\footnote{\url{https://github.com/ondyari/FaceForensics}} serves as a comprehensive dataset designed for forensic studies. It
+FaceForensics++~\footnote{\url{https://github.com/ondyari/FaceForensics}} serves as a 
+broad dataset designed for forensic studies. It
 comprises 977 videos sourced from YouTube, over 1,000 unique sequences, and an
 impressive collection of more than 8,000 Deepfake videos. Originally launched in
 2018, the dataset received significant updates in 2019, making it richer and more
 diverse. As highlighted by the creators in their 2019 paper~\cite{roessler2019faceforensicspp},
 the videos in the dataset were modified using a mix of techniques. This includes two
-graphics-driven methods, namely Face2Face and FaceSwap, as well as two methods rooted
+graphics-driven methods, namely Face2Face and FaceSwap, as well as two methods used
 in machine learning: DeepFakes and NeuralTextures. A noteworthy feature of these
 manipulation methods is their reliance on both source and target video pairs for input.
 This makes the dataset a valuable resource for those looking to understand the
@@ -139,7 +139,8 @@ this dataset requires less human intervention. This design ensures that the data
 be scaled up easily and at a low human cost~\cite{Zhou_2021_CVPR}.
 
 \subsection{OpenForensics}
-The OpenForensics~\footnote{\url{https://github.com/ltnghia/openforensics}} dataset is tailored for detecting and segmenting multi-face forgeries.
+The OpenForensics~\footnote{\url{https://github.com/ltnghia/openforensics}} dataset is 
+designed for detecting and segmenting multi-face forgeries.
 Its version 1.0.0 houses more than 115,000 real-world images, capturing a total of 334,000 human faces.
 Each image in the dataset comes with detailed face-related annotations, like the type
 of forgery, bounding boxes, segmentation masks, forgery boundaries, and typical facial

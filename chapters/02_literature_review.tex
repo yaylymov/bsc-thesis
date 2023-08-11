@@ -135,24 +135,24 @@ surrounding the ethical implications of deepfake technology.
 
 
 \section{Ethical and Legal Concerns}\label{chapter:legal}
-The rise of deepfakes has brought with it a host of ethical and legal concerns.
+The rise of deepfakes has brought with it a number of ethical and legal concerns.
 At the forefront is the issue of consent, as deepfakes often involve the
-use of a person's likeness without their permission. This has been
-particularly prevalent in the creation of deepfake pornography, leading
+use of a person's identity without their permission. This has been
+particularly common in the creation of deepfake pornography, leading
 to significant harm and distress for the individuals involved~\cite{chesney2019deep}.
 
 There are also concerns about the potential misuse of deepfakes in spreading
 disinformation and propaganda. Deepfakes could be used to manipulate public
 opinion, interfere in elections, or even incite violence~\cite{deepfakes-business-insider,partnershiponai}.
 The realistic nature of deepfakes makes it difficult for the average viewer
-to discern truth from falsehood, further exacerbating these risks.
+to distinguish truth from fake, further exacerbating these risks.
 
 In journalism, the rise of deepfakes presents both a significant
-challenge and an ethical dilemma. Journalists must not only navigate
+challenge and an ethical dilemma. Journalists must not only cope with
 the complex task of verifying the authenticity of deepfake content
 but also think about the ethical implications of using \ac{AI}-generated
 content in their reporting. Misuse of deepfakes could lead to the spread of
-false information, deeply shaking people's faith in the media~\cite{doi:10.1177/2056305120903408}.
+false information, shaking people's faith in the media~\cite{doi:10.1177/2056305120903408}.
 
 Furthermore, the use of deepfake technology can be used to fabricate evidence in
 legal cases, potentially leading to miscarriages of justice. As deepfakes become
@@ -162,37 +162,38 @@ evidence~\cite{chesney2019deep}.
 
 The business sector is not immune to the impact of deepfakes either. Businesses
 could fall victim to deepfake scams, in which \ac{AI}-generated audio or video
-is used to impersonate a company executive or other authority figure.
+is used to impersonate a company employee or other authority figure.
 These scams could lead to significant financial losses or damage to a
 company's reputation.
 
-Lastly, in the realm of deepfake detection, a crucial concern is the issue of
+Lastly, in deepfake detection, a crucial concern is the issue of
 false positives and negatives. A false positive, where a real video is wrongly
 flagged as a deepfake, could have serious consequences, such as the unnecessary
 spread of panic or unwarranted damage to an individual's reputation. On the
 other hand, a false negative, where a deepfake is not detected and is thus
 taken as genuine, can lead to the propagation of disinformation or fraud.
-These challenges underscore the need for highly accurate deepfake detection methods~\cite{roessler2019faceforensicspp}.
+These challenges underscore the need for highly careful deepfake detection methods~\cite{roessler2019faceforensicspp}.
 
 \section{Existing Countermeasures and Detection Methods}\label{chapter:countermeasures}
-The advent and proliferation of deepfakes necessitate effective countermeasures
-and detection methods to ensure information integrity and maintain public trust
-in digital media. Detection methods have evolved in response to the sophistication
-and complexity of deepfake generation techniques. Several of these methods employ
-machine learning and more specifically deep learning strategies, leveraging the
-same kind of technology used to create deepfakes, to counter them.
+The rise of deepfakes demand effective countermeasures and detection methods 
+to ensure information integrity and maintain public trust
+in digital content. As deepfake generation techniques have become more advanced, 
+detection approaches have adapted accordingly. Many of these 
+approaches use machine learning, particularly deep learning techniques, 
+leveraging similar technologies that power deepfakes to combat them. 
 
-The general principle of deepfake detection is based on identifying inconsistencies
+The general idea of deepfake detection is based on identifying inconsistencies
 or anomalies that typically arise during the process of creating deepfakes. These
-can be artifacts left by the specific algorithm used, unusual patterns in the
-statistical distribution of the pixel values, or unnatural physical characteristics
+can be artifacts left by the specific algorithm used, unusual patterns in the 
+distribution of the pixel values, or unnatural physical characteristics
 such as inconsistent lighting or improper blinking patterns~\cite{Agarwal_2019_CVPR_Workshops}.
 
-One approach to deepfake detection is frequency-based analysis, where the focus is
+One approach to detect deepfakes is frequency-based analysis, where the focus is
 on the differences in frequency patterns between original and deepfaked videos.
 These methods, like the one proposed by Durall et al.~\cite{durall2020unmasking},
-exploit the fact that deepfake generation algorithms usually operate in the
-spatial domain and thus might introduce specific anomalies in the frequency domain.
+take advantage of the fact that, deepfake generation algorithms usually function in
+spatial domain~\cite{spatial-domain}. As a result, they may produce distinct inconsistencies
+within the frequency domain.
 
 Another widely used approach is the \ac{CNN} based detection. This type of deep
 learning model has shown excellent performance in various image and video
