@@ -11,22 +11,57 @@ countermeasures that have been developed to detect and deter them.
 Deepfakes are underpinned by significant advancements in artificial intelligence (\ac{AI})
 and machine learning (ML), particularly the areas of deep learning and neural
 networks. Central to the creation of deepfakes are two techniques:
-Generative Adversarial Networks (\ac{GAN}s) and autoencoders.
+autoencoders and \ac{GAN}.
 
-\ac{GAN}s introduced by Goodfellow et al.~\cite{goodfellow2014generative}, nvolve two
+Autoencoders, are a type of neural network used for learning
+efficient encodings or representations of input data~\cite{doi:10.1126/science.1127647}.
+In 2006, Hinton et al.~\cite{10.1145/3297156.3297210,doi:10.1126/science.1127647}
+raised the concept of deep learning. This idea quickly gained significant attention,
+making deep learning a primary focus of research worldwide~\cite{simonyan2015deep}.
+The structure of autoencoders has two main parts: an encoder, which simplifies an
+image into a latent space\footnote{Latent space is a compressed representation of data where essential
+	features are captured in lower dimensions~\cite{latent-space}}~\cite{latent-space-medium}, and a decoder,
+which rebuilds the image using that simplified representation~\cite{latent-space-medium,wikipedia-deepfakes}. Deepfakes use this
+setup with a common encoder that translates a person into this latent space. This simplified
+representation captures essential details about their face and body stance. This can subsequently
+be decoded using a model specifically trained for the intended target. So, in other words,
+during the encoding phase, it extracts facial details from two distinct individuals,
+identifying and storing the shared facial characteristics. Subsequently, in the decoding phase,
+it presents the information of these two individuals. The encoding of one person can be
+swapped with another, enabling the face of one person to be superimposed onto another
+in an eerily realistic manner.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.45]{figures/deepfakes_00d}
+	\caption{Autoencoders common structure. Figure from~\cite{autoencoders-image-alazucconi}}\label{fig:autoencoders}
+\end{figure}
+
+The figure in~\autoref{fig:autoencoders} presents an image going
+into an encoder. The outcome is a simplfied version of that face, ofeten called a latent face~\cite{autoencoders-image-alazucconi}.
+Depending on the setup, this latent face might not resemble a typical face. However, when it goes
+through a decoder, it's turned back into a face.
+
+An example of using autoencoders is Fakeapp, developed by a Reddit user for deepfake generation~\cite{s22124556,fakeapp-app}.
+The process requires encoding and decoding pairs to interchange faces between input and
+output images. Distinct image datasets train each pair, but the encoder parameters remain
+consistent across both networks. Consequently, both encoder pairs utilize the same network. Given
+the consistent facial features such as the eyes, nose, and mouth across various images,
+this method allows the encoder to easily recognize similarities between two sets of facial images.
+
+In the field of \ac{AI} and \ac{ML}, two primary methods exist: supervised and unsupervised learning.
+The former relies on labeled data\footnote{In machine learning, data labeling involves attaching
+	meaningful tags to raw data so that models can learn from it~\cite{labeled-data}.}
+for predictions, whereas the latter does not. Noteably, each method has its distinct advantages and
+nuances~\cite{ibm-machine-learning}.
+
+\ac{GAN}s introduced by Goodfellow et al.~\cite{goodfellow2014generative}, envolve two
 competing neural networks: a generator and a discriminator. The generator produces
 fake samples and the discriminator distinguishes between the real and fake samples.
 This iterative process improves the quality of the generated samples over time as
 the generator learns to create more realistic fakes to fool the discriminator. This
 arms race pushes the boundaries of what \ac{GAN}s can create, contributing to the
 production of deepfakes that are increasingly difficult to detect~\cite{brock2019large}.
-
-Autoencoders, on the other hand, are a type of neural network used for learning
-efficient encodings or representations of input data~\cite{doi:10.1126/science.1127647}.
-In the context of deepfakes, autoencoders are used to learn the compressed
-representation of faces and are then able to regenerate them based on the learned model.
-The encoding of one person can be swapped with another, enabling the face of one person
-to be superimposed onto another in an eerily realistic manner.
 
 Recent developments have seen the rise of \ac{VAE} and their use in deepfake
 generation~\cite{kingma2022autoencoding}. Unlike traditional autoencoders, \ac{VAE}s introduce
@@ -105,13 +140,13 @@ expressions in videos.
 \begin{figure}[hb]
 	\centering
 	\includegraphics[width=0.7\columnwidth]{figures/neural_textures}
-	\caption{The reenactment synthesis process uses expression transfer 
-    to generate a UV map of the target actor that reflects the source 
-    actor's expression. This map, along with a background image, is 
-    processed by a neural renderer to create the final reenactment. 
-    Expression alteration is achieved by training a unique neural 
-    texture and renderer for the target actor, resulting in a 
-    manipulated video as shown in the image from~\cite{thies2019deferred}.}\label{fig:neural_textures}
+	\caption{The reenactment synthesis process uses expression transfer
+		to generate a UV map of the target actor that reflects the source
+		actor's expression. This map, along with a background image, is
+		processed by a neural renderer to create the final reenactment.
+		Expression alteration is achieved by training a unique neural
+		texture and renderer for the target actor, resulting in a
+		manipulated video as shown in the image from~\cite{thies2019deferred}.}\label{fig:neural_textures}
 \end{figure}
 
 
@@ -175,16 +210,16 @@ taken as genuine, can lead to the propagation of disinformation or fraud.
 These challenges underscore the need for highly careful deepfake detection methods~\cite{roessler2019faceforensicspp}.
 
 \section{Existing Countermeasures and Detection Methods}\label{chapter:countermeasures}
-The rise of deepfakes demand effective countermeasures and detection methods 
+The rise of deepfakes demand effective countermeasures and detection methods
 to ensure information integrity and maintain public trust
-in digital content. As deepfake generation techniques have become more advanced, 
-detection approaches have adapted accordingly. Many of these 
-approaches use machine learning, particularly deep learning techniques, 
-leveraging similar technologies that power deepfakes to combat them. 
+in digital content. As deepfake generation techniques have become more advanced,
+detection approaches have adapted accordingly. Many of these
+approaches use machine learning, particularly deep learning techniques,
+leveraging similar technologies that power deepfakes to combat them.
 
 The general idea of deepfake detection is based on identifying inconsistencies
 or anomalies that typically arise during the process of creating deepfakes. These
-can be artifacts left by the specific algorithm used, unusual patterns in the 
+can be artifacts left by the specific algorithm used, unusual patterns in the
 distribution of the pixel values, or unnatural physical characteristics
 such as inconsistent lighting or improper blinking patterns~\cite{Agarwal_2019_CVPR_Workshops}.
 
