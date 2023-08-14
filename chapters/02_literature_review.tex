@@ -13,6 +13,7 @@ and machine learning (ML), particularly the areas of deep learning and neural
 networks. Central to the creation of deepfakes are two techniques:
 autoencoders and \ac{GAN}.
 
+\subsection{Autoencoders}
 Autoencoders, are a type of neural network used for learning
 efficient encodings or representations of input data~\cite{doi:10.1126/science.1127647}.
 In 2006, Hinton et al.~\cite{10.1145/3297156.3297210,doi:10.1126/science.1127647}
@@ -49,25 +50,119 @@ consistent across both networks. Consequently, both encoder pairs utilize the sa
 the consistent facial features such as the eyes, nose, and mouth across various images,
 this method allows the encoder to easily recognize similarities between two sets of facial images.
 
+\subsection{Generative Adversarial Networks}
 In the field of \ac{AI} and \ac{ML}, two primary methods exist: supervised and unsupervised learning.
 The former relies on labeled data\footnote{In machine learning, data labeling involves attaching
 	meaningful tags to raw data so that models can learn from it~\cite{labeled-data}.}
 for predictions, whereas the latter does not. Noteably, each method has its distinct advantages and
 nuances~\cite{ibm-machine-learning}.
 
-\ac{GAN}s introduced by Goodfellow et al.~\cite{goodfellow2014generative}, envolve two
+\textit{Supervised learning} is a machine learning approach which uses labeled datasets to
+instruct algorithms in data categorization or predict outcomes. By using labeled inputs and outputs,
+the model calculates its precision and refines itself over time~\cite{supervised-unsupervised}.
+Supervised learning can be categorized into two data mining tasks: classification and regression.
+Classification involves accurately sorting data into specific groups, like distinguishing between
+newspapers and magazines. Meanwhile, regression uses algorithms to discern the relationship between
+dependent and independent variables~\cite{ibm-machine-learning}.
+
+\textit{Unsupervised learning} applies algorithms to group and analyze unlabeled datasets,
+identifying hidden patterns without requiring human guidance~\cite{supervised-unsupervised}.
+
+Among the concepts and techniques used in \ac{ML}, discriminative and generative models stand out
+as two widely used approaches~\cite{generative-discriminative}. So a \textit{generative model}
+assesses the distribution of a dataset to determine the probability of a specific example. On the
+contrary, a \textit{discriminative model} predicts unseen data using conditional probability
+and is applicable for both classification and regression tasks~\cite{generative-discriminative2}.
+
+There are two main types of generative models, \ac{GAN}s and \ac{VAE}~\cite{generative-discriminative}. \ac{GAN}s
+introduced by Goodfellow et al.~\cite{goodfellow2014generative}, envolve two
 competing neural networks: a generator and a discriminator. The generator produces
 fake samples and the discriminator distinguishes between the real and fake samples.
+Within a given training dataset, this method is adept at producing new data that mirrors the
+statistical properties of the training data. For instance, when taught using pictures, a \ac{GAN}
+can create new images that look very real and similar to the original pictures~\cite{wikipedia-gans}.
+While \ac{GAN}s were initially introduced as generative models for unsupervised learning,
+they have demonstrated utility in semi-supervised~\cite{salimans2016improved},
+fully supervised~\cite{pix2pix2017}, and reinforcement learning~\cite{ho2016generative} contexts.
+
+At the heart of \ac{GAN}s lies the principle of `indirect' training via the discriminator.
 This iterative process improves the quality of the generated samples over time as
 the generator learns to create more realistic fakes to fool the discriminator. This
 arms race pushes the boundaries of what \ac{GAN}s can create, contributing to the
 production of deepfakes that are increasingly difficult to detect~\cite{brock2019large}.
 
+\textbf{\ac{GAN}s with alternative architectures.} Various variants of \ac{GAN} structures
+and associated generative models exits. In the original paper~\cite{goodfellow2014generative},
+\ac{GAN}s were designed using \ac{MLP} and \ac{CNN}. Later on, many other generative models and
+architectures, as described in~\autoref{tab:gans}, were introduced~\cite{gans-versions}.
+
+\begin{table}[htpb]
+	\caption{Some of \ac{GAN}s with alternate architectures~\cite{gans-versions,wikipedia-gans}}\label{tab:gans}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Types of \ac{GAN}s}    & \textbf{Description}                                                \\
+		\midrule
+		Conditional GAN (CGAN)         & If both the generator and discriminator of
+		\ac{GAN}s are conditioned on supplementary information, y, the model becomes
+		conditional. This additional data, y, might be class labels or data from
+		different sources. To condition the model, y is inputted
+		into both the discriminator and generator as an extra input
+		layer~\cite{mirza2014conditional}.                                                                   \\
+		\addlinespace
+		Dual GAN (DGAN)                & A version of \ac{GAN}, named DualGAN,
+		uses two networks trained concurrently using two sets of unlabeled images.
+		One network is designed for image generation, while the other distinguishes
+		between generated and actual images. DualGAN effectively learns two image translators,
+		making it suitable for diverse image-to-image translation activities~\cite{yi2018dualgan}.           \\
+		\addlinespace
+		Stack GAN (StackGAN)           & A modified version of \ac{GAN} uses multiple generators
+		stacked together to create a more lifelike image. Stacked \ac{GAN}s compose a
+		network designed to produce high-quality images~\cite{zhang2017stackgan}.                            \\
+		\addlinespace
+		Cycle GAN (CycleGAN)           & CycleGAN is a method for automatically converting
+		images from one domain to another, without the need for paired data samples~\cite{zhu2020unpaired}.  \\
+		\addlinespace
+		Superresolution GAN (SRGAN)    & A \ac{GAN} designed to transform low-resolution images into
+		high-resolution outputs. Super-resolution \ac{GAN}s use a combination of deep networks
+		and adversarial networks to enhance the clarity of the input data~\cite{ledig2017photorealistic}.    \\
+		\addlinespace
+		Deep convolutional GAN (DCGAN) & A \ac{GAN} that employs deep convolutional networks
+		for both the generator and discriminator. This \ac{GAN} relies solely on convolution
+		and deconvolution layers. Studies suggest that images produced by the DCGAN
+		architecture exhibit notably reduced noise~\cite{radford2016unsupervised}.                           \\
+		\addlinespace
+		Self-attention GAN (SAGAN)     & The SAGAN facilitates attention-based, extended-range
+		dependency modeling in image creation. In SAGAN, cues from all feature areas can
+		be utilized to produce details. Additionally, the discriminator ensures that intricate
+		details in separate parts of the image are consistent with each other~\cite{zhang2019selfattention}. \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Variational Autoencoders}
 Recent developments have seen the rise of \ac{VAE} and their use in deepfake
 generation~\cite{kingma2022autoencoding}. Unlike traditional autoencoders, \ac{VAE}s introduce
-a probabilistic spin to the encoding and decoding processes. This allows for the
+a probabilistic spin to the encoding and decoding processes. The encoder, often
+designed using neural networks like the feedforward convolutional network,
+learns to encode input data into a latent space. The decoder, also based
+on a convolutional neural network, then reconstructs the original input
+from this latent space~\cite{vae-gan}. This allows for the
 generation of new faces by sampling from the learned distribution, enhancing the
 ability of the deepfake technology to generate entirely new, but convincing, faces.
+
+While both \ac{VAE}s and \ac{GAN}s are used for image generation, their methodologies differ.
+One primary distinction is their training approach. \ac{VAE}s use an unsupervised learning
+technique, aiming to maximize the likelihood of the generated output relative to the
+input and compress the input into a latent space. Conversely, \ac{GAN}s are trained
+in a supervised learning technique, striving for equilibrium between the generator
+and discriminator, where the former seeks to fool the latter. Furthermore, \ac{VAE}s
+often have a more straightforward training process compared to \ac{GAN}s because they
+don't require tight coordination between their components. Additionally, due to their
+advanced capabilities, \ac{GAN}s are often used for demanding tasks such as
+super-resolution and image-to-image translation. On the other hand, \ac{VAE}s are
+predominantly used for image denoising and generation~\cite{vae-gan}.
 
 \section{Publicly Available Deepfake Generation Tools}\label{chapter:publicly}
 As deepfake technology has evolved, so too has the ease of access to this technology.
@@ -105,7 +200,7 @@ learn, discuss, and share knowledge about deepfakes.
 	\centering
 	\includegraphics[scale=0.32]{figures/emma-stone-faceswap}
 	\caption{Deepfake of Emma Stone impersonating Scarlett Johansson using
-		Faceswaps's Phaze-A model. Screenshot from~\cite{emma-stone-faceswap}.}
+		Faceswap. Screenshot from~\cite{emma-stone-faceswap}.}
 \end{figure}
 
 \subsection{Stable Diffuison}\label{sec:stable-diffusion}
@@ -137,7 +232,7 @@ deepfakes, Neural Textures, as shown in~\autoref{fig:neural_textures}, can be tr
 details, resulting in high-quality face swaps or manipulation of facial
 expressions in videos.
 
-\begin{figure}[hb]
+\begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.7\columnwidth]{figures/neural_textures}
 	\caption{The reenactment synthesis process uses expression transfer
@@ -162,7 +257,7 @@ been both praised for its technological achievements and criticized for
 its potential privacy and consent issues, reflecting the wider debates
 surrounding the ethical implications of deepfake technology.
 
-\begin{figure}[ht]
+\begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.61\columnwidth]{figures/faceapp}
 	\caption{Deepfake created with FaceApp.} %TODO
