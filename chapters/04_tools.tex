@@ -2,8 +2,8 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Analysis of Publicly-Available Deepfake Detection Tools}\label{sec:analysis-tools}
-For a thorough analysis in this study, a variety of tools were picked. Their selection
-was not arbitrary; instead, it was based on the clear criteria detailed in~\autoref{tab:selection_criteria}.
+For this study, several tools were selected for analysis. Their selection
+was not arbitrary; instead, it was based on the criteria detailed in~\autoref{tab:selection_criteria}.
 Tools were chosen with a focus on public availability, ensuring that everyone can access
 and benefit from them. Every tool in this study is open to the public, making the findings
 broadly applicable.
@@ -54,17 +54,18 @@ detection and another three for image detection. Every tool comes with its own
 strengths and weaknesses, ranging from how users can access it, the ease of
 installation, to understanding the results it produces. The selection aimed to
 cover a range of capabilities, as shown in~\autoref{tab:evaluation_metrics},
-to ensure a comprehensive analysis.
+to ensure a general analysis.
 
-For a thorough assessment, each one of these video detection tools were subjected
+For a general assessment, each one of these video detection tools were subjected
 to rigorous testing using a collection of 110 videos. Out of these, 80 videos were independently
-generated, utilizing the DeepFaceLab and FaceSwap tools. The remaining 30
-were sourced from the established FaceForensics++ (\autoref{section:ff++})
-database, wherein 10 were identified as deepfakes, while 20 were authentic.
+generated, 40 deepfakes using the DeepFaceLab (\autoref{sec:deepfacelab}) and 40
+deepfakes using FaceSwap (\autoref{sec:faceswap}) tools. The remaining 30 were sourced
+from the established FaceForensics++ (\autoref{section:ff++})
+database, wherein 10 were identified as deepfakes, while 20 were genuine videos.
 
-For the image detection analysis, we employed a total of 123 pictures. Out of
-these, 103 were deepfakes produced using FaceApp (\autoref{sec:faceapp}) and
-Stable Diffusion (\autoref{sec:stable-diffusion}), while the
+For the image detection analysis, a total of 123 images were used. Out of
+these, 103 were independently generated, 49 deepfakes produced using FaceApp (\autoref{sec:faceapp})
+and 54 deepfakes using Stable Diffusion (\autoref{sec:stable-diffusion}), while the
 remaining 20 were authentic images from our proprietary dataset.
 
 \section{Deepware}\label{sec:deepware}
@@ -400,7 +401,7 @@ last paragraph of~\autoref{sec:analysis-tools}.
 		\textbf{Precision}       & \textbf{Recall}             &
 		\textbf{F1-Score}                                        \\
 		\cline{1-5}
-		Avg. 13,5sec               & 18,18\%                     &
+		Avg. 13,5sec             & 18,18\%                     &
 		100\%                    & 1,98\%                      &
 		3,88\%                                                   \\
 		\cline{1-5}
@@ -454,7 +455,7 @@ in~\autoref{tab:facetorch_metrics1} and~\autoref{tab:facetorch_metrics2}.
 		\textbf{Precision}       & \textbf{Recall}             &
 		\textbf{F1-Score}                                        \\
 		\cline{1-5}
-		Avg. 3,9sec                & 35\%                        &
+		Avg. 3,9sec              & 35\%                        &
 		89,7\%                   & 25,24\%                     &
 		39,4\%                                                   \\
 		\cline{1-5}
@@ -525,7 +526,7 @@ last paragraph of~\autoref{sec:analysis-tools}.
 		\textbf{Precision}       & \textbf{Recall}             &
 		\textbf{F1-Score}                                        \\
 		\cline{1-5}
-		Avg. 3,2sec                & 57,5\%                      &
+		Avg. 3,2sec              & 57,5\%                      &
 		100\%                    & 49\%                        &
 		65,77\%                                                  \\
 		\cline{1-5}

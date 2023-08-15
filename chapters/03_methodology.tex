@@ -115,9 +115,62 @@ about understanding their strengths and potential weaknesses.
 
 Each tool has a unique set of features and algorithms that drive its functionality.
 However, to compare them on a fair level and to ensure a comprehensive
-assessment, a standard set of evaluation metrics is applied. These metrics serve
-as a guiding light, distinguishing the capabilities of each tool in terms of
-detecting deepfakes. The evaluation metrics used in this study are provided in~\autoref{tab:evaluation_metrics}.
+assessment, a standard set of evaluation metrics is applied. These are the evaluation
+metrics that were selected:
+
+\textbf{Processing Time and Scalability.} The time taken for an input to be analyzed
+and authenticated by the tool is important. An average processing time, represented
+average seconds, was used in this assessment. The tool's ability to process multiple
+images or videos simultaneously and subsequently produce an output list indicating
+the authenticity of each piece of content was also examined.
+
+\textbf{Interpretability.} The quality of the output produced by a tool was assessed
+based on its clarity and simplicity. Inputs were checked if they were simply labeled
+as `Real' or `Fake', or if a probabilistic estimate indicating the likelihood of
+manipulation was provided. When probabilities were presented, the format
+(whether in percentages) and the threshold at which content was termed as a deepfake
+were investigated. In this study, content was classified as a deepfake if a
+probability of 50\% or higher was observed.
+
+\textbf{Detection Accuracy.} The fraction of true outcomes (including both true
+positives and true negatives) within the entire dataset was analyzed. This served
+to understand the tool's aptitude in correctly differentiating genuine from manipulated
+content.
+
+\textbf{Precision.} The fraction of true positive outcomes within the total predicted
+positives (including both true and false positives) was evaluated. The tool's capacity
+to minimize false positives, ensuring that genuine content wasn't incorrectly flagged,
+was assessed.
+
+\textbf{Recall.} The efficiency of the tool in correctly identifying genuine deepfakes
+from all the presented deepfakes was evaluated. The actual true positives that were
+successfully identified by the tool were calculated.
+
+\textbf{F1-Score.} The F1-Score is the harmonic mean of precision and recall, providing
+a single metric that balances the trade-off between correctly identifying positive
+instances (precision) and the ability to detect all potential positive instances (recall),
+especially useful in situations where the class distributions are imbalanced\footnote{The class
+	imbalance problem typically occurs when there are many more instances of some
+	classes than others~\cite{JAVAHERI2014153}.}.
+
+\textbf{Dataset Compatibility.} The adaptability of a tool, based on the datasets it
+could align with, was explored. Tools that could function with a variety of datasets
+or those that came recommended with particular datasets were chosen.
+
+\textbf{Training Models.} The types and quality of training models and techniques that
+were employed by each tool were explored.
+
+\textbf{Face Detection Techniques.} The array of face detection techniques that were
+used by these tools was examined. Additionally, it was determined whether the tools
+used alternative detection methods.
+
+\textbf{Programming Language and Framework.} The programming languages and frameworks
+that were important in the tool's development were reviewed to gain insights into its
+structure and potential functionalities.
+
+\textbf{Potential for Further Development.} The possibility of whether tools could
+undergo extended development was investigated. Furthermore, the guidelines or
+requirements provided for such advancements, if any, were examined.
 
 \begin{table}[htpb]
 	\caption{Evaluation Metrics}\label{tab:evaluation_metrics}
@@ -125,73 +178,107 @@ detecting deepfakes. The evaluation metrics used in this study are provided in~\
 	\small
 	\begin{tabularx}{\textwidth}{l X}
 		\toprule
-		\textbf{Evaluation Metrics} & \textbf{Description}                                     \\
+		\textbf{Evaluation Metrics}         & \textbf{Description}                              \\
 		\midrule
-		Processing time             & Measures the time taken by the tool to detect
-		deepfakes in a given input. It also evaluates how well the tool performs
-		when the size and the number of the input data increases.                              \\
+		Processing time and Scalability     & Evaluates the tool's speed in detecting deepfakes
+		and its performance with larger or multiple inputs.                                     \\
 		\addlinespace
-		Interpretability            & Assesses how understandable and transparent
-		the results or outputs of the tool are. It's crucial for users to comprehend
-		why certain detections are made.                                                       \\
+		Interpretability                    & Evaluates the clarity and transparency of the
+		tool's output, ensuring users can understand the detection results.                     \\
 		\addlinespace
-		Detection Accuracy          & The proportion of true results (both true
-		positives and true negatives) in the total dataset. It provides a comprehensive
-		measure of the tool's ability to correctly identify both genuine and deepfake content. \\
+		Detection Accuracy                  & Measures the correct identification of both
+		genuine and deepfake content in the dataset, encompassing true positives and true
+		negatives.                                                                              \\
 		\addlinespace
-		Precision                   & The proportion of true positive results in the
-		total predicted positives (both true and false positives). It measures the tool's capability to avoid false positives,
-		ennsuring that genuine content isn't mistakenly flagged.                               \\
+		Precision                           & Measures the tool's capacity to avoid false
+		positives by calculating the proportion of true positive results in the total
+		predicted positives, including both true and false positives.                           \\
 		\addlinespace
-		Recall                      & Measures the tool's ability to correctly
-		identify actual deepfakes out of all genuine deepfakes presented. It calculates the
-		number of actual true positives the tool identifies.                                   \\
+		Recall                              & Measures the tool's accuracy in identifying
+		actual deepfakes among all presented genuine content by calculating the number
+		of true positives it identifies.                                                        \\
 		\addlinespace
-		F1-Score                    & The harmonic mean of Precision and Recall.
-		It provides a balance between the two when there's an uneven class distribution.       \\
+		F1-Score                            & The harmonic mean of Precision and Recall.
+		It provides a balance between the two when there's an uneven class distribution.        \\
+		\addlinespace
+		Dataset Compatibility               & The tool's adaptability was checked by its
+		dataset compatibility. Versatile tools or those recommended for specific datasets
+		were preferred.                                                                         \\
+		\addlinespace
+		Training Models                     & The training models and techniques used by
+		each tool were examined.                                                                \\
+		\addlinespace
+		Face Detection Techniques           & The face detection techniques and alternative
+		methods used by the tools were assessed.                                                \\
+		\addlinespace
+		Programming Language and Framework  & The programming languages and frameworks used
+		in the tool's development were analyzed for insights into its capabilities.             \\
+		\addlinespace
+		Potential for Further Developempent & The potential for tool enhancement was assessed,
+		along with any provided guidelines for such improvements.                               \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
+
+These metrics serve as a guiding light, distinguishing the capabilities of each tool
+in terms of detecting deepfakes. For example, the F1-Score shows how well a tool can
+find fake content while avoiding mistakes. These metrics give a clear picture of a
+tool's quality. Unlike selection criteria, evaluation metrics focus on how well the
+tool works. By using these metrics, we can clearly see which tools perform best and
+where they might have problems. This makes it easier for researchers and users to
+choose the right tool for their needs.
+An overview of the evaluation metrics used in this study are provided in~\autoref{tab:evaluation_metrics}.
 
 \section{Datasets}
 Datasets are very important when working with deepfakes. They form the backbone of both
 the creation and detection of deepfakes. They also help us train models to create or spot
 deepfakes. Today, there are many datasets available that focus on both deepfake images
-and videos. In~\autoref{fig:sample-deepfakes} a fake sample image of each dataset is provided.
+and videos~\cite{deepfake-dataset,zi2020wilddeepfake,10.1145/3531536.3532946}.
+In~\autoref{fig:sample-deepfakes} a fake sample image of each dataset is provided.
 
 \subsection{FaceForensics++}\label{section:ff++}
-FaceForensics++~\footnote{\url{https://github.com/ondyari/FaceForensics}} serves as a
+\ac{FF++}~\footnote{\url{https://github.com/ondyari/FaceForensics}} serves as a
 broad dataset designed for forensic studies. It
 comprises 977 videos sourced from YouTube, over 1,000 unique sequences, and an
-impressive collection of more than 8,000 Deepfake videos. Originally launched in
-2018, the dataset received significant updates in 2019, making it richer and more
-diverse. As highlighted by the creators in their 2019 paper~\cite{roessler2019faceforensicspp},
+impressive collection of more than 8,000 Deepfake videos~\cite{roessler2019faceforensicspp,masters-thesis}.
+Originally launched in 2018, the dataset received significant updates in 2019~\cite{masters-thesis},
+making it richer and more diverse. As highlighted by the creators in their 2019 paper~\cite{roessler2019faceforensicspp},
 the videos in the dataset were modified using a mix of techniques. This includes two
-graphics-driven methods, namely Face2Face and FaceSwap, as well as two methods used
-in machine learning: DeepFakes and NeuralTextures. A noteworthy feature of these
+graphics-driven methods, namely Face2Face~\cite{thies2020face2face} and FaceSwap~\cite{faceswap},
+as well as two methods used in machine learning: DeepFakes~\cite{faceswap-deepfake}
+and Neural Textures~\cite{thies2019deferred}. A noteworthy feature of these
 manipulation methods is their reliance on both source and target video pairs for input.
 This makes the dataset a valuable resource for those looking to understand the
 nuances and intricacies of different deepfake generation techniques.
 
+This dataset is offered in two quality versions: uncompressed and H264~\cite{enwiki:1168205077}
+compressed format~\cite{deepfake-dataset}. These versions allow for the assessment of
+deepfake detection methods on both compressed and uncompressed videos. However, the \ac{FF++}
+dataset struggles to accurately represent lip-sync deepfakes, and some videos display
+color discrepancies around the manipulated faces~\cite{deepfake-dataset}.
+
 \subsection{Deepfake Detection Challenge Dataset}
-The \ac{DFDC} dataset emerged from a collaborative initiative hosted on Kaggle~\cite{kaggle2020},
-aiming to combat the rise of deceptive deepfake videos. Started in 2019 and ending
-with a big competition in 2020, this challenge saw over 2200 teams competing for an
-overall prize of one million dollars. This challenge wasn't just about competing.
-It was a call for researchers all over the world to create new tools to spot fake
+Launched by Facebook community the \ac{DFDC} dataset emerged from a collaborative initiative 
+hosted on Kaggle~\cite{kaggle2020}, aiming to combat the rise of deceptive deepfake 
+videos. Started in 2019 and ending with a big competition in 2020, this challenge saw 
+over 2200 teams competing for an overall prize of one million dollars~\cite{masters-thesis}. 
+This challenge wasn't just about competing. It was a call for researchers all over the world to create new tools to spot fake
 content. The dataset has 104,500 different deepfake videos from 3,426 paid
-actors~\cite{dolhansky2020deepfake}. This variety makes it a great tool to test and improve deepfake detection
-methods.
+actors~\cite{dolhansky2020deepfake,masters-thesis}. This variety makes it a great tool to test 
+and improve deepfake detection methods. The dataset is created using multiple face-swap 
+techniques combined with different augmentations, such as geometric and color changes, 
+and variations in frame rate. Additionally, it includes distractors like the incorporation 
+of various objects within a video~\cite{deepfake-dataset}.
 
 \subsection{Face Forensics in the Wild}
-The \ac{FFIW}~\footnote{\url{https://github.com/tfzhou/FFIW}} dataset offers 10,000 high-quality
-manipulated videos. What's unique about it is the automatic manipulation process. This
-process is managed by a domain-adversarial quality assessment network, which means creating
-this dataset requires less human intervention. This design ensures that the dataset can
-be scaled up easily and at a low human cost~\cite{Zhou_2021_CVPR}.
+The \ac{FFIW}\footnote{\url{https://github.com/tfzhou/FFIW}} dataset offers 10,000 high-quality
+manipulated videos~\cite{Zhou_2021_CVPR}. What's unique about it is the automatic manipulation 
+process. This process is managed by a domain-adversarial quality assessment network, which 
+means creating this dataset requires less human intervention. This design ensures that the 
+dataset can be scaled up easily and at a low human cost~\cite{Zhou_2021_CVPR}.
 
 \subsection{OpenForensics}
-The OpenForensics~\footnote{\url{https://github.com/ltnghia/openforensics}} dataset is
+The OpenForensics\footnote{\url{https://github.com/ltnghia/openforensics}} dataset is
 designed for detecting and segmenting multi-face forgeries.
 Its version 1.0.0 houses more than 115,000 real-world images, capturing a total of 334,000 human faces.
 Each image in the dataset comes with detailed face-related annotations, like the type
