@@ -38,8 +38,8 @@ developers' adaptability were important considerations.
 
 \textbf{Difficulty of Use.} The complexity of the tools was evaluated on different levels.
 It was labeled as \textit{Easy} if the tool was web-based with a user-friendly
-interface for detecting deepfakes. \textit{Moderate} if it provided a platform like
-Hugging Face Space or \ac{API}s, and \textit{Challenging} if users had to devise their
+interface for detecting deepfakes and if there is any \ac{API}s available. \textit{Moderate} if it provided a platform like
+Hugging Face Space or Google Colab, and \textit{Challenging} if users had to devise their
 own way to utilize the tool.
 
 \textbf{Cost Considerations.} Determined whether the tool is free or comes with a
@@ -92,8 +92,8 @@ An overview of the  selection criteria is provided in~\autoref{tab:selection_cri
 		and gain deeper insights into the tool's functionalities.                               \\
 		\addlinespace
 		Difficulty of Use           & The tool's complexity was categorized as
-		\textit{Easy} for web-based interfaces, \textit{Moderate} for those using
-		platforms like Hugging Face or offering \ac{API}s, and \textit{Challenging}
+		\textit{Easy} for web-based interfaces and with \ac{API} offer, \textit{Moderate} for those using
+		platforms like Hugging Face or Google Colab, and \textit{Challenging}
 		when users needed a custom approach.                                                    \\
 		\addlinespace
 		Cost considerations         & It is assessed if the tool is free or
@@ -160,10 +160,6 @@ or those that came recommended with particular datasets were chosen.
 \textbf{Training Models.} The types and quality of training models and techniques that
 were employed by each tool were explored.
 
-\textbf{Face Detection Techniques.} The array of face detection techniques that were
-used by these tools was examined. Additionally, it was determined whether the tools
-used alternative detection methods.
-
 \textbf{Programming Language and Framework.} The programming languages and frameworks
 that were important in the tool's development were reviewed to gain insights into its
 structure and potential functionalities.
@@ -206,10 +202,7 @@ requirements provided for such advancements, if any, were examined.
 		were preferred.                                                                         \\
 		\addlinespace
 		Training Models                     & The training models and techniques used by
-		each tool were examined.                                                                \\
-		\addlinespace
-		Face Detection Techniques           & The face detection techniques and alternative
-		methods used by the tools were assessed.                                                \\
+		each tool were examined.                                                                \\                                             \\
 		\addlinespace
 		Programming Language and Framework  & The programming languages and frameworks used
 		in the tool's development were analyzed for insights into its capabilities.             \\
@@ -258,23 +251,23 @@ dataset struggles to accurately represent lip-sync deepfakes, and some videos di
 color discrepancies around the manipulated faces~\cite{deepfake-dataset}.
 
 \subsection{Deepfake Detection Challenge Dataset}
-Launched by Facebook community the \ac{DFDC} dataset emerged from a collaborative initiative 
-hosted on Kaggle~\cite{kaggle2020}, aiming to combat the rise of deceptive deepfake 
-videos. Started in 2019 and ending with a big competition in 2020, this challenge saw 
-over 2200 teams competing for an overall prize of one million dollars~\cite{masters-thesis}. 
+Launched by Facebook community the \ac{DFDC} dataset emerged from a collaborative initiative
+hosted on Kaggle~\cite{kaggle2020}, aiming to combat the rise of deceptive deepfake
+videos. Started in 2019 and ending with a big competition in 2020, this challenge saw
+over 2200 teams competing for an overall prize of one million dollars~\cite{masters-thesis}.
 This challenge wasn't just about competing. It was a call for researchers all over the world to create new tools to spot fake
 content. The dataset has 104,500 different deepfake videos from 3,426 paid
-actors~\cite{dolhansky2020deepfake,masters-thesis}. This variety makes it a great tool to test 
-and improve deepfake detection methods. The dataset is created using multiple face-swap 
-techniques combined with different augmentations, such as geometric and color changes, 
-and variations in frame rate. Additionally, it includes distractors like the incorporation 
+actors~\cite{dolhansky2020deepfake,masters-thesis}. This variety makes it a great tool to test
+and improve deepfake detection methods. The dataset is created using multiple face-swap
+techniques combined with different augmentations, such as geometric and color changes,
+and variations in frame rate. Additionally, it includes distractors like the incorporation
 of various objects within a video~\cite{deepfake-dataset}.
 
 \subsection{Face Forensics in the Wild}
 The \ac{FFIW}\footnote{\url{https://github.com/tfzhou/FFIW}} dataset offers 10,000 high-quality
-manipulated videos~\cite{Zhou_2021_CVPR}. What's unique about it is the automatic manipulation 
-process. This process is managed by a domain-adversarial quality assessment network, which 
-means creating this dataset requires less human intervention. This design ensures that the 
+manipulated videos~\cite{Zhou_2021_CVPR}. What's unique about it is the automatic manipulation
+process. This process is managed by a domain-adversarial quality assessment network, which
+means creating this dataset requires less human intervention. This design ensures that the
 dataset can be scaled up easily and at a low human cost~\cite{Zhou_2021_CVPR}.
 
 \subsection{OpenForensics}

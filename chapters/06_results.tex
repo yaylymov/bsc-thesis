@@ -3,7 +3,7 @@
 
 \chapter{Results}\label{chapter:results}
 In this chapter, the results of the in \autoref{sec:analysis-tools} computed experinments are
-presented. Responses to the research questions are addressed in \autoref{sec:final_results}. 
+presented. Responses to the research questions are addressed in \autoref{sec:final_results}.
 As previously described, three different video and image detection tools were used
 to detect deepfakes. Calculations for the video detection tools were based on the
 FaceForensics++ dataset, along with deepfake videos produced by DeepFaceLab and FaceSwap.
@@ -73,41 +73,41 @@ as well as 20 authentic images.
 		\end{tikzpicture}
 		\caption{Image detection}
 	\end{subfigure}
-    \caption{Comparison of the Processing Time of detection tools from~\autoref{sec:analysis-tools}}\label{fig:processing-time}
+	\caption{Comparison of the Processing Time of detection tools from~\autoref{sec:analysis-tools}}\label{fig:processing-time}
 \end{figure}
 
 From~\autoref{fig:processing-time}, it's evident that image detection tools process data faster
 than the video detection tools. This discrepancy is due to the nature of the tools:
-image detection tools only process a single image (frame), whereas video detection tools may 
+image detection tools only process a single image (frame), whereas video detection tools may
 need to break a video into numerous frames and analyze each one separately, which is considerably
-more time-consuming. Additionally, among the video detection tools, NtechLab's tool was slower than 
+more time-consuming. Additionally, among the video detection tools, NtechLab's tool was slower than
 both Deepware and Seferbekov's tool. This might be because of the detection techniques they used.
 
-The duration a tool takes to process data is tied to the size of the input. For instance, 
+The duration a tool takes to process data is tied to the size of the input. For instance,
 Seferbekov's tool, when handling a video under 10MB, averaged a processing time of 20 seconds. However,
-when confronted with a video exceeding 70MB, the time nearly tripled to almost a minute. 
+when confronted with a video exceeding 70MB, the time nearly tripled to almost a minute.
 The size-to-time relationship is consistent across all tools, meaning the larger the size of the
 input, the longer it's going to take the tool to process it.
 
 A comparison of assessed metrics for video detection tools is displayed in~\autoref{fig:comparison_video}.
-The comparison of which tool performed better is interesting. As we know, accuracy and precision 
-are defined as follows: Accuracy measures the fraction of all instances that are correctly 
-identified and precision measures the fraction of instances that were correctly predicted as 
+The comparison of which tool performed better is interesting. As we know, accuracy and precision
+are defined as follows: Accuracy measures the fraction of all instances that are correctly
+identified and precision measures the fraction of instances that were correctly predicted as
 positive out of all predicted positives. So precision is especially important when the number
-of false positives is high. In both of these cases NtechLab performed than the other two 
+of false positives is high. In both of these cases NtechLab performed than the other two
 tools. This is due to the fact that NtechLab could detect more deepfakes.
 
-Recall, also known as sensitivity, measures the proportion of actual positives that were 
+Recall, also known as sensitivity, measures the proportion of actual positives that were
 correctly identified. It is crucial when the cost of missing a pisitive instance is high.
-And F-1 Score is a metric providing a balance between preicision and recall, offering a more 
-comprehensive view of the performance. While NtechLab had higher accuracy and precision, 
+And F-1 Score is a metric providing a balance between preicision and recall, offering a more
+comprehensive view of the performance. While NtechLab had higher accuracy and precision,
 Deepware and Seferbekov's tool have caught up in terms of Recall and F1-Score. This suggests that
 Deepware and Seferbekov's tool were more effective at correctly identifying true positive cases.
 
-When it comes to image detection tools in~\autoref{fig:comparison_image}, AI or Not and 
-Illuminarty outperformed Facetorch. One possible reason could be that AI or Not and 
-Illuminarty are supported by companies and communities, receiving consisten updates. 
-On the other hand, Facetorch is an open-source project. It hasn't had any updates 
+When it comes to image detection tools in~\autoref{fig:comparison_image}, AI or Not and
+Illuminarty outperformed Facetorch. One possible reason could be that AI or Not and
+Illuminarty are supported by companies and communities, receiving consisten updates.
+On the other hand, Facetorch is an open-source project. It hasn't had any updates
 since March 2023, which might make it less equipped to handle newer deepfake generation
 techniques.
 
@@ -173,9 +173,9 @@ techniques.
 		\caption{Precision}
 	\end{subfigure}
 
-    \vspace{0.5cm}
+	\vspace{0.5cm}
 
-    \begin{subfigure}{0.48\textwidth}
+	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
@@ -234,8 +234,8 @@ techniques.
 		\end{tikzpicture}
 		\caption{F1-Score}
 	\end{subfigure}
-    \caption{Comparison of video detection tools from~\autoref{sec:analysis-tools} according
-    to the evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{fig:comparison_video}
+	\caption{Comparison of video detection tools from~\autoref{sec:analysis-tools} according
+		to the evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{fig:comparison_video}
 \end{figure}
 
 
@@ -301,9 +301,9 @@ techniques.
 		\caption{Precision}
 	\end{subfigure}
 
-    \vspace{0.5cm}
+	\vspace{0.5cm}
 
-    \begin{subfigure}{0.48\textwidth}
+	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
@@ -363,14 +363,364 @@ techniques.
 		\caption{F1-Score}
 	\end{subfigure}
 	\caption{Comparison of image detection tools from~\autoref{sec:analysis-tools} according
-    to the evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{fig:comparison_image}
+		to the evaluation metrics listed in~\autoref{tab:evaluation_metrics}}\label{fig:comparison_image}
 \end{figure}
-
 
 \section{Final Results}\label{sec:final_results}
 To conclude the achieved results, it's noticable that some tools might have a high accuracy rate
-but perform poorly in terms of recall and F1-Score. Contrarily, certain tools might demonstrate 
-high precision but low recall, which might indicate that the tool misses some actual 
-positives. By comparing these metrics across the testes tools, a clearer insight into their 
+but perform poorly in terms of recall and F1-Score. Contrarily, certain tools might demonstrate
+high precision but low recall, which might indicate that the tool misses some actual
+positives. By comparing these metrics across the testes tools, a clearer insight into their
 strengths and limitations can be gained. This, in turn, helps us make important decisions on
 which tool is ideal for a particular task.
+
+An overview of selection criteria and evaluation metrics discussed in \autoref{tab:selection_criteria}
+and \autoref{tab:evaluation_metrics} for Deepware is provided in \autoref{tab:deepware-overview}, for Seferbekov in \autoref{tab:seferbekov-overview},
+for NtechLab in \autoref{tab:ntechlab-overview}, for Facetorch in \autoref{tab:facetorch-overview},
+for Illuminarty in \autoref{tab:illuminarty-overview}, for AI or Not in \autoref{tab:ai-or-not-overview}.
+
+\subsection{Research Questions}
+\textit{To answer \ac{RQ}1:} Through various tests with each deepfake detection tool,
+comparative results were obtained. From this analysis, it became evident which tools were more
+user-friendly than others. Overall, tools such as Deepware, AI or Not and Illuminarty stood out
+as particularly accessible and straightforward. Even for individuals without any prior knowledge
+in deepfakes and their detection, these tools proved effective in quickly identifying deepfakes.
+However, while some tools like the one offered by NTechLab or Seferbekov are open-source and
+integrate with platforms like Hugging Face and Google Colab, their ease of use might still pose
+challenges for novices. The presence of documentation, user interfaces, and community support
+can enhance user-friendliness, but there remains a potential learning curve for those unfamiliar
+with the field.
+
+\textit{To answer \ac{RQ}2:} In evaluating the effectiveness of the selected deepfake detection
+tools, there were notable disparities in their performance. For instance, Facetorch, while
+promising in its approach, showed limitations in consistently identifying forgeries,
+especially when confronted with sophisticated deepfake generation techniques such as FaceApp
+and StableDiffusion. On the other hand, video detection tools demonstrated a higher precision
+rate. For example, when testing against deepfakes generated using DeepFaceLab, the video
+detection tools were able to discern the forgeries with a higher accuracy rate compared to
+tools that primarily focused on images. This suggests that while some tools are advancing
+in their detection capabilities, there remains a spectrum of effectiveness, and the choice
+of tool should be contingent on the specific type of media (image or video) being analyzed.
+
+Furthermore, the choice of dataset for training and testing these tools plays a pivotal role
+in their effectiveness. A tool trained on an outdated or narrow dataset might not perform as
+well when exposed to deepfakes created with the latest techniques. This underscores the
+importance of regularly updating detection tools and ensuring they are trained on diverse
+and current datasets.
+
+\textit{To answer \ac{RQ}3:} In addressing Research Question 3, the privacy policies
+and practices of the selected deepfake detection tools were examined. The goal was to
+discern how user data, especially sensitive content uploaded for deepfake detection,
+was handled, stored, and potentially shared.
+
+It was found that while tools like Deepware, Illuminarty and AI or Not provided clear privacy
+policies, others were not transparent about their data practices. The lack of a privacy
+policy can lead to concerns about potential unauthorized data sharing or misuse.
+
+The importance of understanding these privacy implications stems from the need to
+ensure that user content is not misused and that tools comply with global data privacy
+regulations like \ac{GDPR}.
+
+
+\begin{table}[htpb]
+	\caption{Overview of selection criteria and evaluation metrics for Deepware}\label{tab:deepware-overview}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                        \\
+		\midrule
+		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Doesn't require local installation
+			                               \item Provides \ac{API} access
+			                               \item Lack of updates since 2021
+		                               \end{itemize}                  \\
+		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Accessible through: \url{https://deepware.ai/}
+			                               \item Proprietary
+			                               \item No Hugging Face Space or Google Colab available
+		                               \end{itemize}       \\
+		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No User Documentation
+			                               \item Provides FAQ section: \url{https://deepware.ai/faq/}
+		                               \end{itemize}  \\
+		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Easy
+		                               \end{itemize}                  \\
+		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Free
+		                               \end{itemize}                  \\
+		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Website operation: Zemana owns and runs Deepware
+			                               \item Data Collection: Gathers personal and usage data
+			                               \item Data Usage: For service improvement and notifications
+			                               \item Data Disclosure: Shared for specific purposes
+			                               \item User Rights: Access and modify personal data
+		                               \end{itemize} \\
+		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Results are given as deepfake likelihood percentages
+		                               \end{itemize}  \\
+		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No incompatible dataset was found for this tool
+		                               \end{itemize}       \\
+		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Avatarify
+			                               \item Deepware's model
+			                               \item Seferbekov
+			                               \item Ensemble
+		                               \end{itemize}                  \\
+		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Python
+		                               \end{itemize}                  \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Overview of selection criteria and evaluation metrics for Seferbekov's tool}\label{tab:seferbekov-overview}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                                \\
+		\midrule
+		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Requires local installation for development
+			                               \item No \ac{API} access
+			                               \item Lack of updates since 2021
+			                               \item Requires better hardware and \ac{GPU}
+		                               \end{itemize}                                   \\
+		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Accessible through: \url{https://github.com/selimsef/dfdc_deepfake_challenge}
+			                               \item Open source
+			                               \item Integration with Hugging Face and Google Colab possible
+		                               \end{itemize} \\
+		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No active support and usage documentation
+			                               \item Documentation for development available
+		                               \end{itemize}                                     \\
+		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Challenging
+		                               \end{itemize}                                          \\
+		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Free
+		                               \end{itemize}                                          \\
+		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No Privacy Policy available
+		                               \end{itemize}                                          \\
+		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Results are given as deepfake likelihood percentages in a \ac{CSV} file
+		                               \end{itemize}       \\
+		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No incompatible dataset was found for this tool
+		                               \end{itemize}                               \\
+		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item EfficientNet B7 models
+		                               \end{itemize}                                          \\
+		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Python
+		                               \end{itemize}                                          \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Overview of selection criteria and evaluation metrics for NtechLab's tool}\label{tab:ntechlab-overview}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                                              \\
+		\midrule
+		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Requires local installation for development
+			                               \item No \ac{API} access
+			                               \item Lack of updates since 2020
+			                               \item Requires better hardware and \ac{GPU}
+		                               \end{itemize}                                                 \\
+		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Accessible through:\newline \url{https://github.com/NTech-Lab/deepfake-detection-challenge}
+			                               \item Open source
+			                               \item Integration with Hugging Face and Google Colab\newline possible
+		                               \end{itemize} \\
+		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No active support and usage documentation
+			                               \item Documentation for development available
+		                               \end{itemize}                                                   \\
+		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Challenging
+		                               \end{itemize}                                                        \\
+		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Free
+		                               \end{itemize}                                                        \\
+		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No Privacy Policy available
+		                               \end{itemize}                                                        \\
+		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Results are given as deepfake likelihood\newline percentages in a \ac{CSV} file
+		                               \end{itemize}             \\
+		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No incompatible dataset was found for this tool
+		                               \end{itemize}                                             \\
+		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item EfficientNet B7 Noisy Student pre-trained models
+		                               \end{itemize}                                            \\
+		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Python
+		                               \end{itemize}                                                        \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Overview of selection criteria and evaluation metrics for Facetorch}\label{tab:facetorch-overview}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                        \\
+		\midrule
+		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Requires local installation for development
+			                               \item No \ac{API} access
+			                               \item Has some inconsistencies detecting deepfakes
+			                               \item Requires better hardware and \ac{GPU}
+		                               \end{itemize}                          \\
+		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Accessible through: \url{https://github.com/tomas-gajarsky/facetorch}
+			                               \item Open source
+			                               \item Hugging Face Space and Google Colab available
+		                               \end{itemize} \\
+		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item User Guide and Documentation available
+			                               \item Documentation for development available
+			                               \item Disclaimer of not perfect results from developer
+		                               \end{itemize}                      \\
+		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Moderate
+		                               \end{itemize}                                  \\
+		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Free
+		                               \end{itemize}                                  \\
+		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Developer's warning to \cite{facetorch-privacy} regarding tool usage.
+		                               \end{itemize} \\
+		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Results are labeled as `Fake' or `Real'
+		                               \end{itemize}                               \\
+		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Problems detecting FaceApp and StableDiffusion deepfakes
+		                               \end{itemize}              \\
+		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Face Detection~\cite{Deng_2020_CVPR}
+			                               \item Facial Representation Learning~\cite{bulat2022pretraining}
+			                               \item Face Verification~\cite{jung2022unified,kim2023adaface}
+			                               \item Facial Expression Recognition~\cite{9582508}
+			                               \item Deepfake Detection~\cite{Luo_2022,seferbekov-github}
+			                               \item 3D Face Alignment~\cite{wu2021synergy}
+		                               \end{itemize}            \\
+		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Python and Pytorch
+		                               \end{itemize}                                  \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Overview of selection criteria and evaluation metrics for Illuminarty}\label{tab:illuminarty-overview}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                        \\
+		\midrule
+		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Doesn't require local installation
+			                               \item Provides \ac{API} access
+		                               \end{itemize}                  \\
+		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Accessible through: \url{https://app.illuminarty.ai/}
+			                               \item Proprietary
+			                               \item No Hugging Face or Google Colab available
+		                               \end{itemize} \\
+		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Active support available
+			                               \item No documentation
+		                               \end{itemize}                  \\
+		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Easy
+		                               \end{itemize}                  \\
+		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Free and Paid versions available
+		                               \end{itemize}                  \\
+		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Processing: Only voluntary data used.
+			                               \item Payments: Secure transaction methods.
+			                               \item Data Collection: Temporary image retention.
+			                               \item Policy Changes: Updates at discretion.
+		                               \end{itemize}           \\
+		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Results are given as deepfake likelihood percentages
+		                               \end{itemize}  \\
+		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Has some problems detecting FaceApp deepfakes
+		                               \end{itemize}         \\
+		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No available information
+		                               \end{itemize}                  \\
+		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No available information
+		                               \end{itemize}                  \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+	\caption{Overview of selection criteria and evaluation metrics for AI or Not}\label{tab:ai-or-not-overview}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{l X}
+		\toprule
+		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                   \\
+		\midrule
+		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Doesn't require local installation
+			                               \item Provides \ac{API} access
+			                               \item Provides Browser extension and Telegram bot
+		                               \end{itemize}                      \\
+		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Accessible through: \url{https://www.aiornot.com/}
+			                               \item Proprietary
+			                               \item No Hugging Face or Google Colab available
+		                               \end{itemize}               \\
+		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Active support, documentation and FAQ available
+		                               \end{itemize}                  \\
+		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Easy
+		                               \end{itemize}                             \\
+		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Free and Paid versions available
+		                               \end{itemize}                             \\
+		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Data Collection: Gathering diverse user data.
+			                               \item Use of Data: Service improvement and marketing.
+			                               \item Data Sharing: Third-party involvement.
+			                               \item About \& Consent: Agreeing to data practices.
+			                               \item User Rights: State-specific privacy rights.
+		                               \end{itemize}                  \\
+		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Results are given as deepfake likelihood percentages
+		                               \end{itemize}             \\
+		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item Compatible with StableDiffusion, MidJourney, DALL-E and \ac{GAN}
+		                               \end{itemize} \\
+		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No available information
+		                               \end{itemize}                             \\
+		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+			                               \item No available information
+		                               \end{itemize}                             \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
