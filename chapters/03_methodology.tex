@@ -9,10 +9,61 @@ various publicly available deepfake detection tools. It becomes imperative
 to establish a well-defined set of selection criteria for these tools.
 Selecting the right criteria is essential not just for representing a variety
 of detection methods, but also for making a fair comparison between the tools.
-The objective is to ensure that the evaluated tools are comprehensive,
+The objective is to ensure that the evaluated tools are understandable,
 encompassing the nuances of accessibility, ease of use, limitations, variety
-in detection methods, and documentation. A detailed description of the selection
-criterias is given in~\autoref{tab:selection_criteria}.
+in detection methods, and documentation. These are the criteria used to select the tools:
+
+\textbf{Ease of Use and Limitations.} The tools were chosen based on their ease of
+operation. Considerations included the installation process of the chosen tool,
+the availability of \ac{API}, and whether a user with IT skills could utilize
+these APIs for integration purposes. Questions were raised about the specific
+operating systems needed, the requirement of a constant internet connection,
+and any inherent limitations of the tools. Do the developer or owner of the
+tool make any specific promises or claims about its use? Additionally, do the
+tools have restrictions on file soze or video length, and do these factors
+matter to use the tools?
+
+\textbf{Accessibility.} Questions about the tools' accessibility include their
+public availability, any special account requirements for access, and if they can
+run on standard PCs or laptops. Can the tools be accessed via a website or is specialized
+software platforms like GitHub, Hugging Face or Google Colab or an \ac{IDE} required?
+The need for enhanced \ac{GPU} or other hardware specifications, as well as the nature
+of the tool (open source vs.\ proprietary), were also considered.
+
+\textbf{Support and Documentation.} Factors taken into account included the
+provision of user support, installation guidance, usage documentation, and
+resources for development. The existence of troubleshooting resources,
+community discussions for Q\&A, and availability of the source code for
+developers' adaptability were important considerations.
+
+\textbf{Difficulty of Use.} The complexity of the tools was evaluated on different levels.
+It was labeled as \textit{Easy} if the tool was web-based with a user-friendly
+interface for detecting deepfakes. \textit{Moderate} if it provided a platform like
+Hugging Face Space or \ac{API}s, and \textit{Challenging} if users had to devise their
+own way to utilize the tool.
+
+\textbf{Cost Considerations.} Determined whether the tool is free or comes with a
+subscription fee, emphasizing a preference for freely available options. Also, if
+paid versions existed, did they provide additional functionality or ease of use?
+
+\textbf{Privacy Policy.} The presence of privacy policies and terms of use for the
+tools was verified, underscoring their importance for tool legitimacy and
+trustworthiness. Especially when users are required to log in, it's essential
+to clarify how personal information is managed. Additionally, statements regarding
+ethical issues and adherence to relevant laws and regulations further bolster the
+tool's credibility and users' confidence in its operations.
+
+The aforementioned criteria that were established played a critical role in the
+selection process of the tools. Tools were preferred that could be easily
+accessed and trusted by a broad audience. By ensuring tools had clear easy
+installations and user-friendly interfaces, the safety and simplicity of the
+selected tools were prioritized. It wasn't just about identifying tools that were
+publicly available; the goal was to ensure the chosen tools covered not just
+accessibility needs, but were also user-friendly enough for individuals without
+deepfake expertise. This approach aimed to make the tools both dependable and
+user-friendly, addressing a variety of user requirements.
+
+An overview of the  selection criteria is provided in~\autoref{tab:selection_criteria}.
 
 \begin{table}[htpb]
 	\caption{Selection Criteria}\label{tab:selection_criteria}
@@ -20,37 +71,38 @@ criterias is given in~\autoref{tab:selection_criteria}.
 	\small
 	\begin{tabularx}{\textwidth}{l X}
 		\toprule
-		\textbf{Selection Criteria} & \textbf{Description}                       \\
+		\textbf{Selection Criteria} & \textbf{Description}                                      \\
 		\midrule
 		Ease of use and Limitations & The tool's user-friendliness is determined
 		by the simplicity of its installation process and its operational
 		requirements. Is it a straightforward drag-and-drop mechanism, or does
-		it demand an \ac{IDE} and specialized packages? Additionally, any constraints, such
+		it demand any special software? Additionally, any constraints, such
 		as file size limits or video duration caps, play a role in its overall
-		user-friendliness.                                                       \\
+		user-friendliness.                                                                      \\
 		\addlinespace
-		Accessibility               & Only publicly accessible tools were taken
-		into account, promoting the accessibility of deepfake detection and
-		ensuring that a wide spectrum of users, from the general public to
-		specialists, can utilize the tools. The cost factor is another crucial
-		aspect of accessibility; tools that are freely available or open
-		source often gain a larger user base compared to proprietary or paid
-		solutions. Whether the tools are available through a simple browser
-		interface or require local installation can greatly influence
-		accessibility. Additionally, while some advanced tools might demand
-		powerful GPU setups, the most accessible ones should be usable on
-		standard hardware configurations or offer cloud-based solutions, like
-		Google Colab, to bypass local hardware limitations.                      \\
+		Accessibility               & Only publicly-available tools were considered
+		to ensure broad user accessibility. The ease of use, from browser access
+		to local installation, and hardware demands, with preference for
+		standard configurations or cloud solutions like Google Colab,
+		were pivotal in evaluations.                                                            \\
 		\addlinespace
 		Support and Documentation   & Proper documentation and active support,
 		be it community or developer-driven, are crucial. Regular support
 		ensures that users can fully make use of tool features, troubleshoot issues,
-		and gain deeper insights into the tool's functionalities.                \\
+		and gain deeper insights into the tool's functionalities.                               \\
 		\addlinespace
-		Dataset choice              & The datasets compatible with the tool
-		can reflect its versatility and potential applications.
-		Tools that can adapt to various datasets or come with recommended
-		datasets are in a favorable position.                                    \\
+		Difficulty of Use           & The tool's complexity was categorized as
+		\textit{Easy} for web-based interfaces, \textit{Moderate} for those using
+		platforms like Hugging Face or offering \ac{API}s, and \textit{Challenging}
+		when users needed a custom approach.                                                    \\
+		\addlinespace
+		Cost considerations         & It is assessed if the tool is free or
+		subscription-based, favoring free options, and checked if paid versions
+		offered enhanced features or usability.                                                 \\
+		\addlinespace
+		Privacy Policy              & Tools were evaluated for privacy policies and user terms,
+		emphasizing trust. It's vital to know how tools handle login data and their
+		stance on ethics and legal compliance to ensure credibility.                            \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -108,7 +160,7 @@ deepfakes. Today, there are many datasets available that focus on both deepfake 
 and videos. In~\autoref{fig:sample-deepfakes} a fake sample image of each dataset is provided.
 
 \subsection{FaceForensics++}\label{section:ff++}
-FaceForensics++~\footnote{\url{https://github.com/ondyari/FaceForensics}} serves as a 
+FaceForensics++~\footnote{\url{https://github.com/ondyari/FaceForensics}} serves as a
 broad dataset designed for forensic studies. It
 comprises 977 videos sourced from YouTube, over 1,000 unique sequences, and an
 impressive collection of more than 8,000 Deepfake videos. Originally launched in
@@ -139,7 +191,7 @@ this dataset requires less human intervention. This design ensures that the data
 be scaled up easily and at a low human cost~\cite{Zhou_2021_CVPR}.
 
 \subsection{OpenForensics}
-The OpenForensics~\footnote{\url{https://github.com/ltnghia/openforensics}} dataset is 
+The OpenForensics~\footnote{\url{https://github.com/ltnghia/openforensics}} dataset is
 designed for detecting and segmenting multi-face forgeries.
 Its version 1.0.0 houses more than 115,000 real-world images, capturing a total of 334,000 human faces.
 Each image in the dataset comes with detailed face-related annotations, like the type

@@ -21,8 +21,8 @@ raised the concept of deep learning. This idea quickly gained significant attent
 making deep learning a primary focus of research worldwide~\cite{simonyan2015deep}.
 The structure of autoencoders has two main parts: an encoder, which simplifies an
 image into a latent space\footnote{Latent space is a compressed representation of data where essential
-	features are captured in lower dimensions~\cite{latent-space}}~\cite{latent-space-medium}, and a decoder,
-which rebuilds the image using that simplified representation~\cite{latent-space-medium,wikipedia-deepfakes}. Deepfakes use this
+	features are captured in lower dimensions~\cite{enwiki:1169655673}}~\cite{latent-space-medium}, and a decoder,
+which rebuilds the image using that simplified representation~\cite{latent-space-medium,enwiki:1170192786}. Deepfakes use this
 setup with a common encoder that translates a person into this latent space. This simplified
 representation captures essential details about their face and body stance. This can subsequently
 be decoded using a model specifically trained for the intended target. So, in other words,
@@ -80,7 +80,7 @@ competing neural networks: a generator and a discriminator. The generator produc
 fake samples and the discriminator distinguishes between the real and fake samples.
 Within a given training dataset, this method is adept at producing new data that mirrors the
 statistical properties of the training data. For instance, when taught using pictures, a \ac{GAN}
-can create new images that look very real and similar to the original pictures~\cite{wikipedia-gans}.
+can create new images that look very real and similar to the original pictures~\cite{enwiki:1169846514}.
 While \ac{GAN}s were initially introduced as generative models for unsupervised learning,
 they have demonstrated utility in semi-supervised~\cite{salimans2016improved},
 fully supervised~\cite{pix2pix2017}, and reinforcement learning~\cite{ho2016generative} contexts.
@@ -97,7 +97,7 @@ and associated generative models exits. In the original paper~\cite{goodfellow20
 architectures, as described in~\autoref{tab:gans}, were introduced~\cite{gans-versions}.
 
 \begin{table}[htpb]
-	\caption{Some of \ac{GAN}s with alternate architectures~\cite{gans-versions,wikipedia-gans}}\label{tab:gans}
+	\caption{Some of \ac{GAN}s with alternate architectures~\cite{gans-versions,enwiki:1169846514}}\label{tab:gans}
 	\centering
 	\small
 	\begin{tabularx}{\textwidth}{l X}
@@ -170,23 +170,50 @@ There are now several deepfake generation tools that are freely available and re
 easy to use, drastically lowering the bar for entry into the world of deepfakes.
 
 \subsection{DeepFaceLab}
+DeepFaceLab\footnote{\url{https://github.com/iperov/DeepFaceLab}}~\cite{perov2021deepfacelab,10.1117/12.2631297}
+was developed to address the challenges and inefficiencies typically
+observed in deepfake generation models~\cite{s22124556}. This refined framework,
+facilitates face-swapping~\cite{perov2021deepfacelab}. The architecture incorporates
+an `encoder' and `destination decoder', separated by an `inter' layer, and
+concludes with an `alignment' layer. To extract features, it uses the 2DFAN~\cite{Bulat_2017}
+heat map-based facial landmark algorithm, and for face segmentation,
+it utilizes the TernausNet~\cite{iglovikov2018ternausnet}.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.36]{figures/ivanka-deepfacelab}
+	\caption{Deepfake of Ivanka Trump impersonating Emma Watson. Screenshot
+		from our own generated deepfake video dataset with DeepFaceLab.}
+\end{figure}
+
 Known for offering greater functionality and control over the deepfake creation
-process, DeepFaceLab\footnote{\url{https://github.com/iperov/DeepFaceLab}}
-has been used in several high-profile deepfake videos.
+process, DeepFaceLab has been used in several high-profile deepfake videos.
 Its sophisticated technology combines the power of \ac{GAN}s and autoencoders,
 leading to highly realistic face swaps in videos. DeepFaceLab offers tools
 for every step of the deepfake creation process, including face extraction,
 training, and video creation. This comprehensive suite of tools, combined
 with its high-quality results, make it a popular choice among deepfake creators.
 
-\begin{figure}[hb]
+\subsection{FaceSwap}
+Faceswap typically refers to the replacement of one person's face with another's
+in images or videos. In this context, it signifies a specific technique
+implemented in~\cite{faceswap}. The method operates frame-by-frame for both
+source and target videos until one ends. Within each image, distinct
+facial landmarks such as face contour, eyes, mouth, and other distinguishing
+facial features are identified. Utilizing the landmarks from the source image,
+a 3D representation of the source actor's face is constructed. This is then
+adjusted to align with the target actor's facial landmarks and integrated
+into the target image. After processing each frame, the result is a video
+wherein the target actor's face is substituted by the source
+actor's~\cite{deepfakes-thesis,9897972,Korshunova_2017_ICCV}.
+
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.36]{figures/ivanka-deepfacelab}
-	\caption{Deepfake of Ivanka Trump impersonating Emma Watson. Screenshot
-		from our own generated deepfake video with DeepFaceLab.} %TODO
+	\includegraphics[scale=0.32]{figures/emma-stone-faceswap}
+	\caption{Deepfake of Emma Stone impersonating Scarlett Johansson using
+		Faceswap. Screenshot from~\cite{emma-stone-faceswap}.}
 \end{figure}
 
-\subsection{FaceSwap}
 This community-based deepfake tool stands out with its open-source nature,
 providing the user with a choice of multiple \ac{AI} models. It caters to
 varying levels of experience and computing resources, making it accessible
@@ -196,30 +223,45 @@ of deepfake technology, warning against non-consensual use of a person's
 likeness. It is more than just a tool; it's a community where people can
 learn, discuss, and share knowledge about deepfakes.
 
-\begin{figure}[ht]
+\subsection{Stable Diffuison}\label{sec:stable-diffusion}
+Recently, image synthesis methods using diffusion models centered on denoising
+techniques~\cite{ho2020denoising} have gained popularity because of their impressive
+outcomes in generating artificial artwork~\cite{10.1145/3588015.3589842}.
+Notably, latent diffusion models like \ac{SD}~\cite{rombach2022highresolution}
+empower individuals to produce images from textual prompts effectively,
+even using personal computers.
+
+Introduced in 2022~\cite{rombach2022highresolution}, Stable Diffusion is a deep learning
+model utilizing diffusion methods, primarily for generating intricate images based
+on textual inputs. It also has applications in inpainting\footnote{Inpainting refers
+	to the restoration technique where absent or damaged sections of an artwork are
+	replenished to display a complete image~\cite{enwiki:1164523541}.},
+outpainting, and facilitating image-to-image conversions guided by a text
+prompt~\cite{sd-hugging-face}. The model was a collaborative effort from the CompVis Group
+at Ludwig Maximilian University of Munich~\cite{enwiki:1169859793}, Runway,
+Stability AI\footnote{\url{https://stability.ai/stablediffusion}}, and
+several non-profit organizations~\cite{sifted-2020,sd-lmu,stabilityai}.
+
+As a latent diffusion model, Stable Diffusion is a type of deep generative neural network.
+Its code and model parameters are publicly available~\cite{sd-github}, and it's
+compatible with consumer-grade hardware having a GPU with a minimum of
+8 GB~\cite{enwiki:1169859793}. This is in contrast to previous models like DALL-E~\cite{dall-e}
+and Midjourney~\cite{midjourney}, which were restricted to cloud-based access~\cite{enwiki:1169859793,sd-theverge}.
+
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.32]{figures/emma-stone-faceswap}
-	\caption{Deepfake of Emma Stone impersonating Scarlett Johansson using
-		Faceswap. Screenshot from~\cite{emma-stone-faceswap}.}
+	\includegraphics[width=0.59\columnwidth]{figures/justion-trudeau-stable-diff}
+	\caption{Deepfake of Justin Trudeau created with Stable Diffusion.
+		Screenshot from our own generated deepfake video dataset with Stable Diffuison.}
 \end{figure}
 
-\subsection{Stable Diffuison}\label{sec:stable-diffusion}
-Stable Diffusion\footnote{\url{https://stability.ai/stablediffusion}} models have
-also emerged as a powerful technique for generating deepfakes.
-They utilize a diffusion process to generate realistic synthetic images from a
-simple Gaussian noise, achieving impressive results in the generation of
+Stable Diffusion models utilize a diffusion process to generate realistic synthetic
+images from a simple Gaussian noise, achieving impressive results in the generation of
 deepfake images~\cite{wu2022unifying}. One of the benefits of diffusion models
 is that they can capture complex, multi-modal distributions in a way that
 other generative models may struggle with. This makes them particularly
 well-suited for tasks like deepfake generation, where capturing the
 detailed, multi-modal distribution of human faces is essential.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.59\columnwidth]{figures/justion-trudeau-stable-diff}
-	\caption{Deepfake of Justin Trudeau created with Stable Diffusion.
-		Screenshot from our own generated deepfake dataset.} %TODO
-\end{figure}
 
 \subsection{Neural Textures}
 Introduced by Thies et al.~\cite{thies2019deferred}, Neural Textures represent
@@ -234,7 +276,7 @@ expressions in videos.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.7\columnwidth]{figures/neural_textures}
+	\includegraphics[scale=0.55]{figures/neural_textures}
 	\caption{The reenactment synthesis process uses expression transfer
 		to generate a UV map of the target actor that reflects the source
 		actor's expression. This map, along with a background image, is
@@ -244,25 +286,60 @@ expressions in videos.
 		manipulated video as shown in the image from~\cite{thies2019deferred}.}\label{fig:neural_textures}
 \end{figure}
 
+Neural textures utilize a UV-map\footnote{UV mapping involves projecting a 3D model's surface
+	onto a 2D plane for the purpose of texture mapping~\cite{enwiki:1169139226}.}
+connecting elements in the texture map to object points, allowing the creation of a
+viewpoint-specific texture. Integrating this into a trained deferred neural renderer
+produces an image from the designated viewpoint, as illustrated in~\autoref{fig:neural-textures2}.
+While neural textures have various uses, Thies et al.~\cite{thies2019deferred} highlight
+facial video manipulation. \autoref{fig:neural_textures} demonstrates this application,
+paralleling the Face2Face~\cite{thies2020face2face} method. Training videos establish a
+3D face model of the target actor. Additionally, a unique neural texture and deferred neural
+renderer are crafted for this actor. Leveraging the Face2Face expression transfer
+technique, a UV-map from the target video is adjusted to mirror the source actor's
+expressions. With this UV-map, the neural texture, and renderer, the manipulated video emerges.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.25]{figures/neural_textures2}
+	\caption{Overview of neural rendering pipeline~\cite{thies2019deferred}.}\label{fig:neural-textures2}
+\end{figure}
 
 \subsection{FaceApp}\label{sec:faceapp}
 While not a deepfake tool in the traditional sense,
 FaceApp\footnote{\url{https://www.faceapp.com/}} has gained popularity due
 to its ability to transform photos of faces in various ways, such as aging,
-de-aging, gender swapping, and adding smiles. The tool leverages neural
-network technology for its transformations, leading to surprisingly
-realistic results that have significantly contributed to the broader conversation
-around the manipulation of digital imagery~\cite{faceapp}. FaceApp has
-been both praised for its technological achievements and criticized for
-its potential privacy and consent issues, reflecting the wider debates
-surrounding the ethical implications of deepfake technology.
+de-aging, gender swapping, and adding smiles~\cite{wirth2023interface}.
+Introduced in 2017~\cite{wirth2023interface} by the Russian startup Wireless Lab, now known
+as FaceApp Technology Limited, the FaceApp software enables users to undertake
+detailed photo and video modifications. These include aging or rejuvenating facial
+appearances, merging two faces, incorporating intricate facial expressions like smiles,
+and utilizing the debated `gender swap' function.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.61\columnwidth]{figures/faceapp}
-	\caption{Deepfake created with FaceApp.} %TODO
+	\caption{Deepfake created with FaceApp. Screenshot from our own generated deepfake image
+		dataset with FaceApp.}
 \end{figure}
 
+The tool leverages neural network technology for its transformations, leading to surprisingly
+realistic results that have significantly contributed to the broader conversation
+around the manipulation of digital imagery~\cite{faceapp}. FaceApp has
+been both praised for its technological achievements and criticized for
+its potential privacy and consent issues~\cite{warzel2019faceapp}, reflecting the wider debates
+surrounding the ethical implications of deepfake technology.
+
+In essence, FaceApp's image processing capabilities go beyond just simple pixel-altering
+image filters. Initially, each image is transformed into a multi-dimensional vector which
+might subsequently serve as a foundation for modification --- essentially a reshuffling
+of the neural weights in the network~\cite{faceapp-article1}. When using FaceApp's tools,
+the \ac{CNN} superimposes specific features onto the chosen portrait or selfie, features
+that have been extracted from its training dataset. Thanks to sophisticated image recognition
+techniques, precise automatic feature adjustments are made, resulting in notably photorealistic
+effects. Intriguingly, while fundamentally transforming the image, FaceApp preserves
+unique facial features~\cite{faceapp-medium}. This allows users to perceive alterations, like aging or
+rejuvenation, as authentic modifications to their own faces~\cite{wirth2023interface,faceapp-article2}.
 
 \section{Ethical and Legal Concerns}\label{chapter:legal}
 The rise of deepfakes has brought with it a number of ethical and legal concerns.
@@ -294,7 +371,7 @@ The business sector is not immune to the impact of deepfakes either. Businesses
 could fall victim to deepfake scams, in which \ac{AI}-generated audio or video
 is used to impersonate a company employee or other authority figure.
 These scams could lead to significant financial losses or damage to a
-company's reputation.
+company's reputation~\cite{MUSTAK2023113368}.
 
 Lastly, in deepfake detection, a crucial concern is the issue of
 false positives and negatives. A false positive, where a real video is wrongly
