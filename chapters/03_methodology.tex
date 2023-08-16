@@ -38,9 +38,9 @@ developers' adaptability were important considerations.
 
 \textbf{Difficulty of Use.} The complexity of the tools was evaluated on different levels.
 It was labeled as \textit{Easy} if the tool was web-based with a user-friendly
-interface for detecting deepfakes and if there is any \ac{API}s available. \textit{Moderate} if it provided a platform like
-Hugging Face Space or Google Colab, and \textit{Challenging} if users had to devise their
-own way to utilize the tool.
+interface for detecting deepfakes and if there is any \ac{API}s available. \textit{Moderate} 
+if it provided a platform like Hugging Face Space or Google Colab, and \textit{Challenging} 
+if users had to devise their own way to utilize the tool.
 
 \textbf{Cost Considerations.} Determined whether the tool is free or comes with a
 subscription fee, emphasizing a preference for freely available options. Also, if
@@ -57,13 +57,13 @@ The aforementioned criteria that were established played a critical role in the
 selection process of the tools. Tools were preferred that could be easily
 accessed and trusted by a broad audience. By ensuring tools had clear easy
 installations and user-friendly interfaces, the safety and simplicity of the
-selected tools were prioritized. It wasn't just about identifying tools that were
-publicly available; the goal was to ensure the chosen tools covered not just
+selected tools were prioritized. It wasn't just about identifying 
+publicly-available tools; the goal was to ensure the chosen tools covered not just
 accessibility needs, but were also user-friendly enough for individuals without
 deepfake expertise. This approach aimed to make the tools both dependable and
 user-friendly, addressing a variety of user requirements.
 
-An overview of the  selection criteria is provided in~\autoref{tab:selection_criteria}.
+An overview of the selection criteria is provided in~\autoref{tab:selection_criteria}.
 
 \begin{table}[htpb]
 	\caption{Selection Criteria}\label{tab:selection_criteria}
@@ -73,8 +73,8 @@ An overview of the  selection criteria is provided in~\autoref{tab:selection_cri
 		\toprule
 		\textbf{Selection Criteria} & \textbf{Description}                                      \\
 		\midrule
-		Ease of use and Limitations & The tool's user-friendliness is determined
-		by the simplicity of its installation process and its operational
+		Ease of Use and Limitations & The tool's user-friendliness is determined
+		by the simplicity of its installation process and operational
 		requirements. Is it a straightforward drag-and-drop mechanism, or does
 		it demand any special software? Additionally, any constraints, such
 		as file size limits or video duration caps, play a role in its overall
@@ -82,7 +82,7 @@ An overview of the  selection criteria is provided in~\autoref{tab:selection_cri
 		\addlinespace
 		Accessibility               & Only publicly-available tools were considered
 		to ensure broad user accessibility. The ease of use, from browser access
-		to local installation, and hardware demands, with preference for
+		to local installation, and hardware demands, with a preference for
 		standard configurations or cloud solutions like Google Colab,
 		were pivotal in evaluations.                                                            \\
 		\addlinespace
@@ -120,7 +120,7 @@ metrics that were selected:
 
 \textbf{Processing Time and Scalability.} The time taken for an input to be analyzed
 and authenticated by the tool is important. An average processing time, represented
-average seconds, was used in this assessment. The tool's ability to process multiple
+by average seconds, was used in this assessment. The tool's ability to process multiple
 images or videos simultaneously and subsequently produce an output list indicating
 the authenticity of each piece of content was also examined.
 
@@ -142,7 +142,7 @@ positives (including both true and false positives) was evaluated. The tool's ca
 to minimize false positives, ensuring that genuine content wasn't incorrectly flagged,
 was assessed.
 
-\textbf{Recall.} The efficiency of the tool in correctly identifying genuine deepfakes
+\textbf{Recall.} The efficiency of the tool in correctly identifying actual deepfakes
 from all the presented deepfakes was evaluated. The actual true positives that were
 successfully identified by the tool were calculated.
 
@@ -192,7 +192,7 @@ requirements provided for such advancements, if any, were examined.
 		\addlinespace
 		Recall                              & Measures the tool's accuracy in identifying
 		actual deepfakes among all presented genuine content by calculating the number
-		of true positives it identifies.                                                        \\
+		of true positives, it identifies.                                                        \\
 		\addlinespace
 		F1-Score                            & The harmonic mean of Precision and Recall.
 		It provides a balance between the two when there's an uneven class distribution.        \\
@@ -207,7 +207,7 @@ requirements provided for such advancements, if any, were examined.
 		Programming Language and Framework  & The programming languages and frameworks used
 		in the tool's development were analyzed for insights into its capabilities.             \\
 		\addlinespace
-		Potential for Further Developempent & The potential for tool enhancement was assessed,
+		Potential for Further Development & The potential for tool enhancement was assessed,
 		along with any provided guidelines for such improvements.                               \\
 		\bottomrule
 	\end{tabularx}
@@ -217,10 +217,10 @@ These metrics serve as a guiding light, distinguishing the capabilities of each 
 in terms of detecting deepfakes. For example, the F1-Score shows how well a tool can
 find fake content while avoiding mistakes. These metrics give a clear picture of a
 tool's quality. Unlike selection criteria, evaluation metrics focus on how well the
-tool works. By using these metrics, we can clearly see which tools perform best and
+tool works. By using these metrics, we can see which tools perform best and
 where they might have problems. This makes it easier for researchers and users to
 choose the right tool for their needs.
-An overview of the evaluation metrics used in this study are provided in~\autoref{tab:evaluation_metrics}.
+An overview of the evaluation metrics used in this study is provided in~\autoref{tab:evaluation_metrics}.
 
 \section{Datasets}
 Datasets are very important when working with deepfakes. They form the backbone of both
@@ -251,9 +251,9 @@ dataset struggles to accurately represent lip-sync deepfakes, and some videos di
 color discrepancies around the manipulated faces~\cite{deepfake-dataset}.
 
 \subsection{Deepfake Detection Challenge Dataset}
-Launched by Facebook community the \ac{DFDC} dataset emerged from a collaborative initiative
+Launched by the Facebook community the \ac{DFDC} dataset emerged from a collaborative initiative
 hosted on Kaggle~\cite{kaggle2020}, aiming to combat the rise of deceptive deepfake
-videos. Started in 2019 and ending with a big competition in 2020, this challenge saw
+videos. Starting in 2019 and ending with a big competition in 2020, this challenge saw
 over 2200 teams competing for an overall prize of one million dollars~\cite{masters-thesis}.
 This challenge wasn't just about competing. It was a call for researchers all over the world to create new tools to spot fake
 content. The dataset has 104,500 different deepfake videos from 3,426 paid

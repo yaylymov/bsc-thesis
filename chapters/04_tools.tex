@@ -91,7 +91,7 @@ for the detection, Deepware employs 4 different deepfake detection models~\cite{
 
 \begin{itemize}
 	\item \textbf{Avatarify}: Avatarify~\cite{avatarify} is a tool that puts another person's
-	      face on yours during live video chats. It's available on Github for everyone~\cite{avatarify-github}.
+	      face on yours during live video chats. It's available on GitHub for everyone~\cite{avatarify-github}.
 	      Ali Aliev made Avatarify using a model from the University of Trento and Snap, Inc~\cite{avatarify-vice,siarohin2020order}.
 	      This model can animate a photo with a video of someone else without needing many
 	      pictures of the face. Unlike other face-swap tools, this one works in real-time
@@ -225,7 +225,7 @@ helped determine crop positions, with a margin added around the face to better d
 image noise differences. If multiple faces appeared in a video frame,
 the \ac{SSIM}~\cite{1284395} was used to compare the fake and original frames. \ac{SSIM}
 measures image differences based on luminance, contrast, and structure. Minimal
-differences could change a label from fake to real. Training was done with images
+differences could change a label from fake to real. The training was done with images
 sized 380$\times$380 pixels in batches of 12~\cite{masters-thesis}.
 
 For each video it analyzes, Seferbekov's tool focuses on 32 specific frames.
@@ -291,7 +291,7 @@ numerous public deepfake datasets highlights its adaptability and relevance in
 the field of deepfake detection.
 
 Additionally, Seferbekov's tool is open-source, providing an opportunity
-for those with a programming background and knowledge in detection techniques
+for those with a programming background and knowledge of detection techniques
 to modify and extend the implementation to their specific requirements.
 This flexibility encourages continuous improvement and adaptability to
 emerging deepfake trends.
@@ -320,7 +320,7 @@ to work with Google Colaboratory in our research due to the lack of access to su
 advanced hardware. This choice highlights the adaptability of the tool
 across various platforms.
 
-Talking about the technicalities on how this tool works: the heart of the software is
+Talking about the technicalities of how this tool works: the heart of the software is
 based on a trio of EfficientNet-B7 models~\cite{tan2020efficientnet}.
 These models use Noisy Student~\cite{xie2020selftraining} pre-trained weights.
 One of these models looks at video sequences, while the other two break videos
@@ -470,7 +470,7 @@ It comes with an \ac{API} option and offers subscription-based plans for those w
 \ac{AI} model identification for image generators or unlimited \ac{API} usage. Using the free version,
 users can only check \ac{AI} and Deepfake images and texts. There is also a user-friendly Terms of Use\footnote{url{https://illuminarty.ai/en/terms.html}}
 and Privacy Policy\footnote{\url{https://illuminarty.ai/en/privacy.html}} sections that explain the tool's purpose and usage instructions.
-Additionally, if users need suport, they can reach out the Illuminarty community
+Additionally, if users need support, they can reach out to the Illuminarty community
 through Discord~\cite{illuminarty-discord} or Patreon~\cite{illuminarty-patreon}.
 
 The results of the Detection Accuracy, Precision, Recall and F1-Score assessed
@@ -520,10 +520,10 @@ main products:
 human.
 
 \textbf{Bias-o-Meter}: This is a smart tool, integrated with the Chrome extension to find hidden biases
-and truth behind the News.
+and the truth behind the News.
 
 \textbf{NFT fraud detection}: This is tool prevents digital art or \ac{NFT} fraud across blockchains and
-marketplaces using realtime detection.
+marketplaces using real-time detection.
 
 We will be focusing on AI or Not. This tool stands out because of its support and user-friendly guidelines.
 To analyze the authenticity of images, you can either upload an image directly to their website or

@@ -2,7 +2,7 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Results}\label{chapter:results}
-In this chapter, the results of the in \autoref{sec:analysis-tools} computed experinments are
+In this chapter, the results of the in \autoref{sec:analysis-tools} computed experiments are
 presented. Responses to the research questions are addressed in \autoref{sec:final_results}.
 As previously described, three different video and image detection tools were used
 to detect deepfakes. Calculations for the video detection tools were based on the
@@ -77,7 +77,7 @@ as well as 20 authentic images.
 \end{figure}
 
 From~\autoref{fig:processing-time}, it's evident that image detection tools process data faster
-than the video detection tools. This discrepancy is due to the nature of the tools:
+than video detection tools. This discrepancy is due to the nature of the tools:
 image detection tools only process a single image (frame), whereas video detection tools may
 need to break a video into numerous frames and analyze each one separately, which is considerably
 more time-consuming. Additionally, among the video detection tools, NtechLab's tool was slower than
@@ -94,19 +94,19 @@ The comparison of which tool performed better is interesting. As we know, accura
 are defined as follows: Accuracy measures the fraction of all instances that are correctly
 identified and precision measures the fraction of instances that were correctly predicted as
 positive out of all predicted positives. So precision is especially important when the number
-of false positives is high. In both of these cases NtechLab performed than the other two
-tools. This is due to the fact that NtechLab could detect more deepfakes.
+of false positives is high. In both of these cases, NtechLab performed better than the other two
+tools. This is because NtechLab could detect more deepfakes.
 
 Recall, also known as sensitivity, measures the proportion of actual positives that were
-correctly identified. It is crucial when the cost of missing a pisitive instance is high.
-And F-1 Score is a metric providing a balance between preicision and recall, offering a more
+correctly identified. It is crucial when the cost of missing a positive instance is high.
+And F-1 Score is a metric providing a balance between precision and recall, offering a more
 comprehensive view of the performance. While NtechLab had higher accuracy and precision,
 Deepware and Seferbekov's tool have caught up in terms of Recall and F1-Score. This suggests that
 Deepware and Seferbekov's tool were more effective at correctly identifying true positive cases.
 
 When it comes to image detection tools in~\autoref{fig:comparison_image}, AI or Not and
 Illuminarty outperformed Facetorch. One possible reason could be that AI or Not and
-Illuminarty are supported by companies and communities, receiving consisten updates.
+Illuminarty are supported by companies and communities, receiving consistent updates.
 On the other hand, Facetorch is an open-source project. It hasn't had any updates
 since March 2023, which might make it less equipped to handle newer deepfake generation
 techniques.
@@ -367,7 +367,7 @@ techniques.
 \end{figure}
 
 \section{Final Results}\label{sec:final_results}
-To conclude the achieved results, it's noticable that some tools might have a high accuracy rate
+To conclude the achieved results, it's noticeable that some tools might have a high accuracy rate
 but perform poorly in terms of recall and F1-Score. Contrarily, certain tools might demonstrate
 high precision but low recall, which might indicate that the tool misses some actual
 positives. By comparing these metrics across the testes tools, a clearer insight into their
@@ -384,7 +384,7 @@ for Illuminarty in \autoref{tab:illuminarty-overview}, for AI or Not in \autoref
 comparative results were obtained. From this analysis, it became evident which tools were more
 user-friendly than others. Overall, tools such as Deepware, AI or Not and Illuminarty stood out
 as particularly accessible and straightforward. Even for individuals without any prior knowledge
-in deepfakes and their detection, these tools proved effective in quickly identifying deepfakes.
+of deepfakes and their detection, these tools proved effective in quickly identifying deepfakes.
 However, while some tools like the one offered by NTechLab or Seferbekov are open-source and
 integrate with platforms like Hugging Face and Google Colab, their ease of use might still pose
 challenges for novices. The presence of documentation, user interfaces, and community support
@@ -402,7 +402,7 @@ tools that primarily focused on images. This suggests that while some tools are 
 in their detection capabilities, there remains a spectrum of effectiveness, and the choice
 of tool should be contingent on the specific type of media (image or video) being analyzed.
 
-Furthermore, the choice of dataset for training and testing these tools plays a pivotal role
+Furthermore, the choice of a dataset for training and testing these tools plays a pivotal role
 in their effectiveness. A tool trained on an outdated or narrow dataset might not perform as
 well when exposed to deepfakes created with the latest techniques. This underscores the
 importance of regularly updating detection tools and ensuring they are trained on diverse
@@ -422,6 +422,7 @@ ensure that user content is not misused and that tools comply with global data p
 regulations like \ac{GDPR}.
 
 
+\setlist[itemize]{nosep, left=0em, before=\vspace{-0.6\baselineskip}, after=\vspace{-0.6\baselineskip}}
 \begin{table}[htpb]
 	\caption{Overview of selection criteria and evaluation metrics for Deepware}\label{tab:deepware-overview}
 	\centering
@@ -430,48 +431,57 @@ regulations like \ac{GDPR}.
 		\toprule
 		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                        \\
 		\midrule
-		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+		Ease of Use and Limitations  & \begin{itemize}
 			                               \item Doesn't require local installation
 			                               \item Provides \ac{API} access
 			                               \item Lack of updates since 2021
-		                               \end{itemize}                  \\
-		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                    \\
+		\addlinespace
+		Accessibility                & \begin{itemize}
 			                               \item Accessible through: \url{https://deepware.ai/}
 			                               \item Proprietary
 			                               \item No Hugging Face Space or Google Colab available
 		                               \end{itemize}       \\
-		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Support and Documentation    & \begin{itemize}
 			                               \item No User Documentation
 			                               \item Provides FAQ section: \url{https://deepware.ai/faq/}
 		                               \end{itemize}  \\
-		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Difficulty of Use            & \begin{itemize}
 			                               \item Easy
-		                               \end{itemize}                  \\
-		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                             \\
+		\addlinespace
+		Cost considerations          & \begin{itemize}
 			                               \item Free
-		                               \end{itemize}                  \\
-		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                             \\
+		\addlinespace
+		Privacy Policy               & \begin{itemize}
 			                               \item Website operation: Zemana owns and runs Deepware
 			                               \item Data Collection: Gathers personal and usage data
 			                               \item Data Usage: For service improvement and notifications
 			                               \item Data Disclosure: Shared for specific purposes
 			                               \item User Rights: Access and modify personal data
 		                               \end{itemize} \\
-		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Interpretability             & \begin{itemize}
 			                               \item Results are given as deepfake likelihood percentages
 		                               \end{itemize}  \\
-		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Dataset Compatibility        & \begin{itemize}
 			                               \item No incompatible dataset was found for this tool
 		                               \end{itemize}       \\
-		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Training Models              & \begin{itemize}
 			                               \item Avatarify
 			                               \item Deepware's model
 			                               \item Seferbekov
 			                               \item Ensemble
-		                               \end{itemize}                  \\
-		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                      \\
+		\addlinespace
+		Programming Language         & \begin{itemize}
 			                               \item Python
-		                               \end{itemize}                  \\
+		                               \end{itemize}                                             \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -484,42 +494,50 @@ regulations like \ac{GDPR}.
 		\toprule
 		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                                \\
 		\midrule
-		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+		Ease of Use and Limitations  & \begin{itemize}
 			                               \item Requires local installation for development
 			                               \item No \ac{API} access
 			                               \item Lack of updates since 2021
 			                               \item Requires better hardware and \ac{GPU}
 		                               \end{itemize}                                   \\
-		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Accessibility                & \begin{itemize}
 			                               \item Accessible through: \url{https://github.com/selimsef/dfdc_deepfake_challenge}
 			                               \item Open source
 			                               \item Integration with Hugging Face and Google Colab possible
 		                               \end{itemize} \\
-		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+		Support and Documentation    & \begin{itemize}
 			                               \item No active support and usage documentation
 			                               \item Documentation for development available
 		                               \end{itemize}                                     \\
-		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Difficulty of Use            & \begin{itemize}
 			                               \item Challenging
-		                               \end{itemize}                                          \\
-		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                                   \\
+		\addlinespace
+		Cost considerations          & \begin{itemize}
 			                               \item Free
-		                               \end{itemize}                                          \\
-		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                                     \\
+		\addlinespace
+		Privacy Policy               & \begin{itemize}
 			                               \item No Privacy Policy available
-		                               \end{itemize}                                          \\
-		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                   \\
+		\addlinespace
+		Interpretability             & \begin{itemize}
 			                               \item Results are given as deepfake likelihood percentages in a \ac{CSV} file
 		                               \end{itemize}       \\
-		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Dataset Compatibility        & \begin{itemize}
 			                               \item No incompatible dataset was found for this tool
 		                               \end{itemize}                               \\
-		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Training Models              & \begin{itemize}
 			                               \item EfficientNet B7 models
-		                               \end{itemize}                                          \\
-		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                        \\
+		\addlinespace
+		Programming Language         & \begin{itemize}
 			                               \item Python
-		                               \end{itemize}                                          \\
+		                               \end{itemize}                                                                     \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -532,42 +550,51 @@ regulations like \ac{GDPR}.
 		\toprule
 		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                                              \\
 		\midrule
-		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+		Ease of Use and Limitations  & \begin{itemize}
 			                               \item Requires local installation for development
 			                               \item No \ac{API} access
 			                               \item Lack of updates since 2020
 			                               \item Requires better hardware and \ac{GPU}
 		                               \end{itemize}                                                 \\
-		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Accessibility                & \begin{itemize}
 			                               \item Accessible through:\newline \url{https://github.com/NTech-Lab/deepfake-detection-challenge}
 			                               \item Open source
 			                               \item Integration with Hugging Face and Google Colab\newline possible
-		                               \end{itemize} \\
-		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize} \\\addlinespace
+
+		Support and Documentation    & \begin{itemize}
 			                               \item No active support and usage documentation
 			                               \item Documentation for development available
 		                               \end{itemize}                                                   \\
-		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Difficulty of Use            & \begin{itemize}
 			                               \item Challenging
-		                               \end{itemize}                                                        \\
-		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                                                 \\
+		\addlinespace
+		Cost considerations          & \begin{itemize}
 			                               \item Free
-		                               \end{itemize}                                                        \\
-		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                                                   \\
+		\addlinespace
+		Privacy Policy               & \begin{itemize}
 			                               \item No Privacy Policy available
-		                               \end{itemize}                                                        \\
-		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                                 \\
+		\addlinespace
+		Interpretability             & \begin{itemize}
 			                               \item Results are given as deepfake likelihood\newline percentages in a \ac{CSV} file
 		                               \end{itemize}             \\
-		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Dataset Compatibility        & \begin{itemize}
 			                               \item No incompatible dataset was found for this tool
 		                               \end{itemize}                                             \\
-		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Training Models              & \begin{itemize}
 			                               \item EfficientNet B7 Noisy Student pre-trained models
 		                               \end{itemize}                                            \\
-		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Programming Language         & \begin{itemize}
 			                               \item Python
-		                               \end{itemize}                                                        \\
+		                               \end{itemize}                                                                                   \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -578,50 +605,59 @@ regulations like \ac{GDPR}.
 	\small
 	\begin{tabularx}{\textwidth}{l X}
 		\toprule
-		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                        \\
+		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                                \\
 		\midrule
-		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+		Ease of Use and Limitations  & \begin{itemize}
 			                               \item Requires local installation for development
 			                               \item No \ac{API} access
 			                               \item Has some inconsistencies detecting deepfakes
 			                               \item Requires better hardware and \ac{GPU}
-		                               \end{itemize}                          \\
-		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
-			                               \item Accessible through: \url{https://github.com/tomas-gajarsky/facetorch}
+		                               \end{itemize}                                  \\
+		\addlinespace
+		Accessibility                & \begin{itemize}
+			                               \item Accessible through:\newline \url{https://github.com/tomas-gajarsky/facetorch}
 			                               \item Open source
 			                               \item Hugging Face Space and Google Colab available
 		                               \end{itemize} \\
-		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Support and Documentation    & \begin{itemize}
 			                               \item User Guide and Documentation available
 			                               \item Documentation for development available
 			                               \item Disclaimer of not perfect results from developer
-		                               \end{itemize}                      \\
-		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                              \\
+		\addlinespace
+		Difficulty of Use            & \begin{itemize}
 			                               \item Moderate
-		                               \end{itemize}                                  \\
-		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                                     \\
+		\addlinespace
+		Cost considerations          & \begin{itemize}
 			                               \item Free
-		                               \end{itemize}                                  \\
-		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                                     \\
+		\addlinespace
+		Privacy Policy               & \begin{itemize}
 			                               \item Developer's warning to \cite{facetorch-privacy} regarding tool usage.
-		                               \end{itemize} \\
-		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}         \\
+		\addlinespace
+		Interpretability             & \begin{itemize}
 			                               \item Results are labeled as `Fake' or `Real'
-		                               \end{itemize}                               \\
-		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                       \\
+		\addlinespace
+		Dataset Compatibility        & \begin{itemize}
 			                               \item Problems detecting FaceApp and StableDiffusion deepfakes
-		                               \end{itemize}              \\
-		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                      \\
+		\addlinespace
+		Training Models              & \begin{itemize}
 			                               \item Face Detection~\cite{Deng_2020_CVPR}
 			                               \item Facial Representation Learning~\cite{bulat2022pretraining}
 			                               \item Face Verification~\cite{jung2022unified,kim2023adaface}
 			                               \item Facial Expression Recognition~\cite{9582508}
 			                               \item Deepfake Detection~\cite{Luo_2022,seferbekov-github}
 			                               \item 3D Face Alignment~\cite{wu2021synergy}
-		                               \end{itemize}            \\
-		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                    \\
+		\addlinespace
+		Programming Language         & \begin{itemize}
 			                               \item Python and Pytorch
-		                               \end{itemize}                                  \\
+		                               \end{itemize}                                                            \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -634,43 +670,52 @@ regulations like \ac{GDPR}.
 		\toprule
 		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                        \\
 		\midrule
-		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+		Ease of Use and Limitations  & \begin{itemize}
 			                               \item Doesn't require local installation
 			                               \item Provides \ac{API} access
-		                               \end{itemize}                  \\
-		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                    \\
+		\addlinespace
+		Accessibility                & \begin{itemize}
 			                               \item Accessible through: \url{https://app.illuminarty.ai/}
 			                               \item Proprietary
 			                               \item No Hugging Face or Google Colab available
 		                               \end{itemize} \\
-		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Support and Documentation    & \begin{itemize}
 			                               \item Active support available
 			                               \item No documentation
-		                               \end{itemize}                  \\
-		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                              \\
+		\addlinespace
+		Difficulty of Use            & \begin{itemize}
 			                               \item Easy
-		                               \end{itemize}                  \\
-		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                             \\
+		\addlinespace
+		Cost considerations          & \begin{itemize}
 			                               \item Free and Paid versions available
-		                               \end{itemize}                  \\
-		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                      \\
+		\addlinespace
+		Privacy Policy               & \begin{itemize}
 			                               \item Processing: Only voluntary data used.
 			                               \item Payments: Secure transaction methods.
 			                               \item Data Collection: Temporary image retention.
 			                               \item Policy Changes: Updates at discretion.
 		                               \end{itemize}           \\
-		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Interpretability             & \begin{itemize}
 			                               \item Results are given as deepfake likelihood percentages
 		                               \end{itemize}  \\
-		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Dataset Compatibility        & \begin{itemize}
 			                               \item Has some problems detecting FaceApp deepfakes
 		                               \end{itemize}         \\
-		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Training Models              & \begin{itemize}
 			                               \item No available information
-		                               \end{itemize}                  \\
-		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                              \\
+		\addlinespace
+		Programming Language         & \begin{itemize}
 			                               \item No available information
-		                               \end{itemize}                  \\
+		                               \end{itemize}                              \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -683,44 +728,53 @@ regulations like \ac{GDPR}.
 		\toprule
 		\textbf{Criteria \& Metrics} & \textbf{Evaluation}                                                   \\
 		\midrule
-		Ease of use and Limitations  & \begin{itemize}[nosep,nolistsep,noitemsep]
+		Ease of Use and Limitations  & \begin{itemize}
 			                               \item Doesn't require local installation
 			                               \item Provides \ac{API} access
 			                               \item Provides Browser extension and Telegram bot
 		                               \end{itemize}                      \\
-		Accessibility                & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Accessibility                & \begin{itemize}
 			                               \item Accessible through: \url{https://www.aiornot.com/}
 			                               \item Proprietary
 			                               \item No Hugging Face or Google Colab available
 		                               \end{itemize}               \\
-		Support and Documentation    & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Support and Documentation    & \begin{itemize}
 			                               \item Active support, documentation and FAQ available
 		                               \end{itemize}                  \\
-		Difficulty of Use            & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Difficulty of Use            & \begin{itemize}
 			                               \item Easy
-		                               \end{itemize}                             \\
-		Cost considerations          & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                                        \\
+		\addlinespace
+		Cost considerations          & \begin{itemize}
 			                               \item Free and Paid versions available
-		                               \end{itemize}                             \\
-		Privacy Policy               & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                 \\
+		\addlinespace
+		Privacy Policy               & \begin{itemize}
 			                               \item Data Collection: Gathering diverse user data.
 			                               \item Use of Data: Service improvement and marketing.
 			                               \item Data Sharing: Third-party involvement.
 			                               \item About \& Consent: Agreeing to data practices.
 			                               \item User Rights: State-specific privacy rights.
 		                               \end{itemize}                  \\
-		Interpretability             & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Interpretability             & \begin{itemize}
 			                               \item Results are given as deepfake likelihood percentages
 		                               \end{itemize}             \\
-		Dataset Compatibility        & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Dataset Compatibility        & \begin{itemize}
 			                               \item Compatible with StableDiffusion, MidJourney, DALL-E and \ac{GAN}
 		                               \end{itemize} \\
-		Training Models              & \begin{itemize}[nosep,nolistsep,noitemsep]
+		\addlinespace
+		Training Models              & \begin{itemize}
 			                               \item No available information
-		                               \end{itemize}                             \\
-		Programming Language         & \begin{itemize}[nosep,nolistsep,noitemsep]
+		                               \end{itemize}                                         \\
+		\addlinespace
+		Programming Language         & \begin{itemize}
 			                               \item No available information
-		                               \end{itemize}                             \\
+		                               \end{itemize}                                         \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
